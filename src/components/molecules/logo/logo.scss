@@ -1,0 +1,8 @@
+.logo {
+  display: flex;
+  height: inherit;
+  &__image {
+    margin: 4px 0 4px 0;
+    align-items: center;
+  }
+}

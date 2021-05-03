@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+import Header from './components/organisms';
 
-class App extends React.Component{
-    render(){
-        return(
-            <div>Hello World</div>
-        )
-    }
-}
+// const App = () => <div>Hello World</div>;
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Header />, document.getElementById('root'));

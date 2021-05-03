@@ -1,0 +1,11 @@
+
+body {
+    background: red;
+    margin: 0px;
+  }
+  
+  @media (min-width: 600px) {
+    body {
+      background: green;
+    }
+  }
