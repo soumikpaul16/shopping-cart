@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import { IntlProvider } from 'react-intl';
+import './assets/styles/_global.scss';
 import Header from './components/organisms';
+import translations from './locale/en/translations';
+import flattenMessages from './utils';
 
-// const App = () => <div>Hello World</div>;
+const App = () => <Header />;
 
-ReactDOM.render(<Header />, document.getElementById('root'));
+ReactDOM.render(
+  <IntlProvider locale="en" messages={flattenMessages(translations)}>
+    <App />
+  </IntlProvider>,
+  document.getElementById('root'),
+);
