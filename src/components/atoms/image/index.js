@@ -1,13 +1,13 @@
 import classNames from 'classnames';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 export const propTypes = {
   /**
    * @default 'img'
    */
   /**
-   * Sets classnames of the image.
+   * Sets classnames of the image .
    */
   className: PropTypes.string,
 };
