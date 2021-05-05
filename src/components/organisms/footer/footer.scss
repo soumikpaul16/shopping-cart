@@ -1,0 +1,15 @@
+@import "../../../assets/styles/colors";
+
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: $color-light-grey;
+  justify-content: center;
+  height: 3em;
+  &__container {
+    font-size: 0.8rem;
+    color: $color-text-dark;
+    font-weight: 500;
+    text-align: center;
+  }
+}
