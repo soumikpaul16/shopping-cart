@@ -1,3 +1,3 @@
 # shopping-cart
 
-Live Demo: https://shopping-cart-2021.netlify.app/
+Live Demo for feature branches: https://shopping-cart-feature.netlify.app/

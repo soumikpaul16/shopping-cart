@@ -1,31 +1,39 @@
-import classNames from 'classnames';
 import React from 'react';
-import {
-  FormattedMessage,
-} from 'react-intl';
-import { Logo } from '../../molecules';
+import { Logo, Nav } from '../../molecules';
 import './header.scss';
+import logoImage from '../../../assets/images/logo.png';
 
 const mainNavs = [
-  { id: 'header.home', className: '' },
-  { id: 'header.products', className: '' },
+  { id: 'header.home', path: '', className: 'header__nav__items__link' },
+  {
+    id: 'header.products',
+    path: 'products',
+    className: 'header__nav__items__link',
+  },
 ];
 const authNavs = [
-  { id: 'header.sign_in', className: 'sign-in' },
-  { id: 'header.register', className: '' },
+  {
+    id: 'header.sign_in',
+    path: 'signIn',
+    className: 'header__auth__wrapper__link header__auth__wrapper--space-right',
+  },
+  {
+    id: 'header.register',
+    path: 'register',
+    className: 'header__auth__wrapper__link',
+  },
 ];
 
 const Header = () => (
   <header className="header">
     <div className="header__sub__container">
-      <Logo />
-      {/* will be making a different atom/molecule for nav and carts. */}
-      <nav className="header__nav__items">
-        {mainNavs.map((element) => (<span key={element.id} className={classNames('header__nav__items__link', element.className)}><FormattedMessage id={element.id} /></span>))}
-      </nav>
-      <nav className="header__auth__wrapper">
-        {authNavs.map((element) => (<span key={element.id} className={classNames('header__auth__wrapper__link', element.className)}><FormattedMessage id={element.id} /></span>))}
-      </nav>
+      <div className="header--flex">
+        <Logo src={logoImage} className="logo" />
+        <Nav className="header__nav__items" navElements={mainNavs} />
+      </div>
+      <div>
+        <Nav className="header__auth__wrapper" navElements={authNavs} />
+      </div>
     </div>
   </header>
 );

@@ -8,7 +8,7 @@
   align-items: center;
   &__sub__container {
     width: 100%;
-    height: 8vh;
+    height: 4em;
     display: flex;
     justify-content: space-between;
   }
@@ -18,21 +18,27 @@
   &__auth__wrapper {
     display: none;
   }
+  &--flex {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__logo {
+    align-self: center;
+  }
 }
 
 @media (min-width: 600px) {
   .header {
     &__sub__container {
-      height: 10vh;
+      height: 5em;
     }
     &__nav__items {
       display: block;
-      position: absolute;
-      bottom: 15%;
       font-size: 1rem;
       color: $color-text;
       font-weight: 500;
-      margin-left: 9em;
+      align-self: flex-end;
+      margin-bottom: 1em;
       &__link {
         margin-left: 2em;
         cursor: pointer;
@@ -47,7 +53,7 @@
       &__link {
         cursor: pointer;
       }
-      .sign-in{
+      &--space-right {
         margin-right: 1em;
       }
     }
@@ -58,11 +64,8 @@
   .header {
     &__sub__container {
       width: 1000px;
-      height: 14vh;
+      height: 6em;
       margin: auto;
-    }
-    &__nav__items {
-      margin-left: 14em;
     }
   }
 }
