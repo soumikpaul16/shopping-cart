@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "An assignment project to demonstrate HTML CSS and React understanding",
   "main": "index.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
   "scripts": {
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
