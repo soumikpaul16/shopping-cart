@@ -4,11 +4,9 @@ import './footer.scss';
 
 const Footer = () => (
   <footer className="footer">
-    <div className="footer__container">
-      <FormattedMessage id="footer.copyright" />
-      {' © '}
-      <FormattedMessage id="footer.message" />
-    </div>
+    <FormattedMessage id="footer.copyright" />
+    {' © '}
+    <FormattedMessage id="footer.message" />
   </footer>
 );
 
