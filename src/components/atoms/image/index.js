@@ -2,7 +2,13 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export const propTypes = {
+const Image = ({
+  className, alt, src, ...props
+}) => (
+  <img alt={alt} src={src} className={classNames(className)} {...props} />
+);
+
+Image.propTypes = {
   /**
    * @default 'img'
    */
@@ -10,16 +16,13 @@ export const propTypes = {
    * Sets classnames of the image .
    */
   className: PropTypes.string,
+  src: PropTypes.string,
+  alt: PropTypes.string,
 };
-
-const defaultProps = {
+Image.defaultProps = {
   className: '',
+  src: '',
+  alt: '',
 };
-
-// eslint-disable-next-line jsx-a11y/alt-text
-const Image = ({ className, ...props }) => <img {...props} className={classNames(className)} />;
-
-Image.propTypes = propTypes;
-Image.defaultProps = defaultProps;
 
 export default Image;
