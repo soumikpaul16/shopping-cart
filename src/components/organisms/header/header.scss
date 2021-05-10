@@ -18,7 +18,7 @@
   &__auth__wrapper {
     display: none;
   }
-  &--flex {
+  &--left-align {
     display: flex;
     justify-content: flex-start;
   }
@@ -30,7 +30,7 @@
 @media (min-width: 600px) {
   .header {
     &__sub__container {
-      height: 5em;
+      height: 5rem;
     }
     &__nav__items {
       display: block;

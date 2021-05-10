@@ -27,7 +27,7 @@ const authNavs = [
 const Header = () => (
   <header className="header">
     <div className="header__sub__container">
-      <div className="header--flex">
+      <div className="header--left-align">
         <Logo src={logoImage} className="logo" />
         <Nav className="header__nav__items" navElements={mainNavs} />
       </div>
