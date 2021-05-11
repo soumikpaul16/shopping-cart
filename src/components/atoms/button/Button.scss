@@ -1,0 +1,12 @@
+@import "../../../assets/styles/colors";
+
+.button {
+  background-color: $color-primary-button;
+  border: none;
+  color: $color-white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 1rem;
+}
