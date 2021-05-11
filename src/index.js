@@ -9,19 +9,12 @@ import translations from './locale/en/translations';
 import flattenMessages from './utils';
 import AppRouter from './AppRouter';
 
-const App = () => (
-  <>
-    <Header />
-    {/* <AppRouter /> */}
-    <Home />
-    <Footer />
-  </>
-);
-
 ReactDOM.render(
   <BrowserRouter>
     <IntlProvider locale="en" messages={flattenMessages(translations)}>
-      <App />
+      <Header />
+      <AppRouter />
+      <Footer />
     </IntlProvider>
   </BrowserRouter>,
   document.getElementById('root'),

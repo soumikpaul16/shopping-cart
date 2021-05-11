@@ -5,10 +5,10 @@ import Home from './components/pages/home';
 
 const AppRouter = () => (
   <Switch>
-    <Route path="/signIn" exact component={<></>} />
-    <Route path="/register" exact component={<></>} />
-    <Route path="/products" exact component={<></>} />
-    {/* <Route path="/" exact component={<Home />} /> */}
+    <Route path="/signIn" exact render={(props) => <></>} />
+    <Route path="/register" exact render={(props) => <Home {...props} />} />
+    <Route path="/products" exact render={(props) => <Home {...props} />} />
+    <Route path="/" render={(props) => <Home {...props} />} />
     {/* will add page not found page */}
     <Redirect from="/*" to="/" />
   </Switch>
