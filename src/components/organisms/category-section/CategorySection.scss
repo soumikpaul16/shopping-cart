@@ -1,0 +1,33 @@
+@import "../../../assets/styles/colors";
+
+.category {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 60px 60px -60px $color-grey;
+  padding: 1em;
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+  &__image__wrapper {
+    flex: 2;
+    padding: 4rem 0 4em 0;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .category {
+    width: 1023px;
+    margin: auto;
+    &__image__wrapper {
+        flex: 2;
+        padding: 4rem 0 4em 0;
+        img {
+          width: 70%;
+        }
+      }
+  }
+}

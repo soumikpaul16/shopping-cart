@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import { Image, RouteLink } from '../../atoms';
-import './logo.scss';
+import './Logo.scss';
 
 const Logo = ({ src, className }) => (
   <RouteLink className={className}>
