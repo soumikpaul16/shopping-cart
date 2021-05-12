@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .header {
     &__sub__container {
       height: 5rem;
@@ -60,10 +60,10 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .header {
     &__sub__container {
-      width: 1000px;
+      width: 1024px;
       height: 6rem;
       margin: auto;
     }

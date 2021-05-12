@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Carousel } from '../../molecules';
 import { CategorySection } from '../../organisms';
 import categoriesContent from '../../../../server/categories/index.get.json';
+import bannersContent from '../../../../server/banners/index.get.json';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
+  const [banners, setBanners] = useState([]);
+
   useEffect(() => {
     let isCancelled = false;
     if (!isCancelled) {
+      setBanners(bannersContent);
       setCategories(categoriesContent);
     }
     return () => {
@@ -16,6 +21,7 @@ const Home = () => {
 
   return (
     <>
+      {banners.length > 0 && <Carousel bannersInfo={banners} />}
       {categories.length > 0
         && categories
           .filter((e) => e.enabled)

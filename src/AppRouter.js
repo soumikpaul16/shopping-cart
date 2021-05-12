@@ -5,7 +5,7 @@ import Home from './components/pages/home';
 
 const AppRouter = () => (
   <Switch>
-    <Route path="/signIn" exact render={(props) => <></>} />
+    <Route path="/signIn" exact render={(props) => <Home {...props} />} />
     <Route path="/register" exact render={(props) => <Home {...props} />} />
     <Route path="/products" exact render={(props) => <Home {...props} />} />
     <Route path="/" render={(props) => <Home {...props} />} />
