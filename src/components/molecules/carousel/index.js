@@ -72,6 +72,7 @@ const Carousel = ({ bannersInfo }) => {
             currentSlide === 1 ? bannersInfo.length : currentSlide - 1,
           );
         }}
+        aria-label="previous banner"
       >
         PREV
       </Button>
@@ -82,6 +83,7 @@ const Carousel = ({ bannersInfo }) => {
             currentSlide === bannersInfo.length ? 1 : currentSlide + 1,
           );
         }}
+        aria-label="next banner"
       >
         NEXT
       </Button>
@@ -94,7 +96,7 @@ const Carousel = ({ bannersInfo }) => {
                 currentSlide === banner.order,
             })}
             onClick={() => handleSlide(banner.order)}
-            aria-label="carousel nav"
+            aria-label={`carousel banner ${banner.bannerImageAlt}`}
           />
         ))}
       </div>
