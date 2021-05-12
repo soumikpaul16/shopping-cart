@@ -1,4 +1,5 @@
-@import "../../../assets/styles/colors";
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
 
 .category {
   flex: 1;
@@ -18,9 +19,9 @@
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: $screen-large) {
   .category {
-    width: 1023px;
+    width: 1024px;
     margin: auto;
     &__image__wrapper {
         flex: 2;

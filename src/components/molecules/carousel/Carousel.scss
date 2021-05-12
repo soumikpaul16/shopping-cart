@@ -1,4 +1,6 @@
-@import "../../../assets/styles/colors";
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
 
 .carousel {
   position: relative;
@@ -56,14 +58,14 @@
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: $screen-large) {
   .carousel {
     width: 1023px;
     height: 25rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-mid) {
   .carousel {
     height: 20rem;
     &__button {
