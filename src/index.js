@@ -1,21 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './AppRouter';
 import './assets/styles/_global.scss';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
-import Home from './components/pages/home';
-import { Header, Footer } from './components/organisms';
+import { Footer, Header } from './components/organisms';
 import translations from './locale/en/translations';
 import flattenMessages from './utils';
-import AppRouter from './AppRouter';
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <IntlProvider locale="en" messages={flattenMessages(translations)}>
       <Header />
       <AppRouter />
       <Footer />
     </IntlProvider>
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById('root'),
 );
