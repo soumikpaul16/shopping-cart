@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 import { PropTypes } from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Button, Image } from '../../atoms';
 import './Carousel.scss';
+import carouselMetadata from './metadata.json';
 
 const Carousel = ({ bannersInfo }) => {
   const [currentSlide, setCurrentSlide] = useState(null);
@@ -74,7 +76,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="previous banner"
       >
-        PREV
+        <FormattedMessage id={carouselMetadata?.buttons?.previous?.id} />
       </Button>
       <Button
         className="carousel__button carousel__button--right"
@@ -85,7 +87,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="next banner"
       >
-        NEXT
+        <FormattedMessage id={carouselMetadata?.buttons?.next?.id} />
       </Button>
       <div className="carousel__nav">
         {bannersInfo.map((banner) => (
