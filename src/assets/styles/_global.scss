@@ -1,3 +1,4 @@
+@import './variables/breakpoints';
 html,
 body {
   padding: 0;
@@ -16,4 +17,11 @@ a {
   text-decoration: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+.container {
+  padding-top: 4rem;
+  @media (min-width: $screen-mid) {
+    padding-top: 5rem;
+  }
 }

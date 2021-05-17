@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import bannersContent from '../../../../server/banners/index.get.json';
+import categoriesContent from '../../../../server/categories/index.get.json';
 import { Carousel } from '../../molecules';
 import { CategorySection } from '../../organisms';
-import categoriesContent from '../../../../server/categories/index.get.json';
-import bannersContent from '../../../../server/banners/index.get.json';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -34,7 +34,7 @@ const Home = () => {
               name={category.name}
               description={category.description}
               buttonContent={category.key}
-              redirectPath={category.key}
+              redirectPath={`products/${category.key}`}
             />
           ))}
     </>

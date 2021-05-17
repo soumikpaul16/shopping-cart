@@ -5,7 +5,9 @@
   width: 100%;
   box-shadow: 0 0px 10px 0px $color-grey;
   padding: 0;
-  position: relative;
+  position: fixed;
+  background-color: $color-white;
+  z-index: 2;
   align-items: center;
   &__sub__container {
     width: 100%;

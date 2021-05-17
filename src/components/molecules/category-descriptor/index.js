@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
-import { Button } from '../../atoms';
+import { Button, RouteLink } from '../../atoms';
 import './CategoryDescriptor.scss';
 
 const CategoryDescriptor = ({
@@ -12,7 +12,11 @@ const CategoryDescriptor = ({
   <div className="description">
     <h4 className="description__name">{name}</h4>
     <p className="description__content">{description}</p>
-    <Button className="description__button">{`Explore ${buttonContent}`}</Button>
+    <RouteLink path={redirectPath}>
+      <Button className="description__button">
+        {`Explore ${buttonContent}`}
+      </Button>
+    </RouteLink>
   </div>
 );
 
