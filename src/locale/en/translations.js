@@ -2,7 +2,7 @@ export default {
   header: {
     home: 'Home',
     products: 'Products',
-    sign_in: 'SignIn',
+    login: 'Login',
     register: 'Register',
     carousel: {
       next: 'NEXT',
@@ -20,7 +20,7 @@ export default {
     password: 'Password',
   },
   register: {
-    text: 'Signup',
+    text: 'Register',
     description: 'We do not share your personal details with anyone.',
     firstName: 'First Name',
     lastName: 'Last Name',

@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import bannersContent from '../../../../server/banners/index.get.json';
-import categoriesContent from '../../../../server/categories/index.get.json';
+import { useQuery } from '@apollo/react-hooks';
 import { Carousel } from '../../molecules';
 import { CategorySection } from '../../organisms';
+import { GET_BANNERS, GET_CATEGORIES } from '../../../services';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const [banners, setBanners] = useState([]);
+  const bannersData = useQuery(GET_BANNERS);
+  const categoriesData = useQuery(GET_CATEGORIES);
 
   useEffect(() => {
     let isCancelled = false;
-    if (!isCancelled) {
-      setBanners(bannersContent);
-      setCategories(categoriesContent);
+    if (!isCancelled && bannersData?.data && categoriesData?.data) {
+      setBanners(bannersData.data.get);
+      setCategories(categoriesData.data.get);
     }
     return () => {
       isCancelled = true;
     };
-  }, []);
+  }, [bannersData, categoriesData]);
 
   return (
     <>

@@ -14,8 +14,8 @@
     ],
     "authNavs": [
       {
-        "id": "header.sign_in",
-        "path": "signIn",
+        "id": "header.login",
+        "path": "login",
         "className": "header__auth__wrapper__link header__auth__wrapper--space-right"
       },
       {
