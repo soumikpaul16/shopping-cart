@@ -1,8 +1,4 @@
-import Home from './home';
-import Register from './register';
-import SignIn from './sign-in';
-import Products from './products';
-
-export {
-  Home, Register, SignIn, Products,
-};
+export { default as Home } from './home';
+export { default as Register } from './register';
+export { default as SignIn } from './sign-in';
+export { default as Products } from './products';

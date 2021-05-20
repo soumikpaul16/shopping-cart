@@ -22,9 +22,9 @@ ReactDOM.render(
     <BrowserRouter>
       <IntlProvider locale="en" messages={flattenMessages(translations)}>
         <Header />
-        <section className="container">
+        <main className="container">
           <AppRouter />
-        </section>
+        </main>
         <Footer />
       </IntlProvider>
     </BrowserRouter>

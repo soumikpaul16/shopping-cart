@@ -14,6 +14,7 @@ const InputBox = ({
       id={id}
       onChange={onChange}
       value={value}
+      autoComplete="off"
       {...props}
     />
     <label className="input__label" htmlFor={id}>

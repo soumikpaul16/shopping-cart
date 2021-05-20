@@ -1,8 +1,4 @@
-import Header from './header';
-import Footer from './footer';
-import CategorySection from './category-section';
-import Form from './form';
-
-export {
-  Header, Footer, CategorySection, Form,
-};
+export { default as Header } from './header';
+export { default as Footer } from './footer';
+export { default as CategorySection } from './category-section';
+export { default as Form } from './form';
