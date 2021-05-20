@@ -50,6 +50,10 @@
   &__box:focus + &__label {
     transform: translate(0, 0) scale(1);
     cursor: pointer;
+    font-weight: 500;
+  }
+
+  &__box:focus + &__label {
     color: $color-blue;
   }
 }
