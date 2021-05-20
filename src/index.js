@@ -1,25 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
-import './assets/styles/_global.scss';
 import { BrowserRouter } from 'react-router-dom';
-import { Header, Footer } from './components/organisms';
+import AppRouter from './AppRouter';
+import './assets/styles/_global.scss';
+import { Footer, Header } from './components/organisms';
 import translations from './locale/en/translations';
 import flattenMessages from './utils';
-import AppRouter from './AppRouter';
-
-const App = () => (
-  <>
-    <Header />
-    <AppRouter />
-    <Footer />
-  </>
-);
 
 ReactDOM.render(
   <BrowserRouter>
     <IntlProvider locale="en" messages={flattenMessages(translations)}>
-      <App />
+      <Header />
+      <AppRouter />
+      <Footer />
     </IntlProvider>
   </BrowserRouter>,
   document.getElementById('root'),

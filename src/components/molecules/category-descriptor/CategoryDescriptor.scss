@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables/colors";
+
+.description {
+  flex: 3;
+  text-align: center;
+  &__name {
+    margin: 0px;
+  }
+  &__content {
+  }
+  &__button {
+    padding: 1rem;
+    background-color: $color-red;
+  }
+}

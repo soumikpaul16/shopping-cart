@@ -1,0 +1,10 @@
+{
+  "buttons": {
+    "next": {
+      "id": "carousel.next"
+    },
+    "previous": {
+      "id": "carousel.previous"
+    }
+  }
+}

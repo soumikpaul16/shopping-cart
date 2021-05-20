@@ -9,4 +9,8 @@ export default {
     copyright: 'Copyright',
     message: '2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd',
   },
+  carousel: {
+    next: 'NEXT',
+    previous: 'PREV',
+  },
 };

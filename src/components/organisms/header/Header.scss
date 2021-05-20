@@ -1,8 +1,9 @@
-@import "../../../assets/styles/colors";
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
 
 .header {
   width: 100%;
-  box-shadow: 0 0px 10px 0px $color-text;
+  box-shadow: 0 0px 10px 0px $color-grey;
   padding: 0;
   position: relative;
   align-items: center;
@@ -27,7 +28,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: $screen-mid) {
   .header {
     &__sub__container {
       height: 5rem;
@@ -35,7 +36,7 @@
     &__nav__items {
       display: block;
       font-size: 1rem;
-      color: $color-text;
+      color: $color-dark-grey;
       font-weight: 500;
       align-self: flex-end;
       margin-bottom: 1rem;
@@ -47,7 +48,7 @@
     &__auth__wrapper {
       display: block;
       font-size: 0.8rem;
-      color: $color-text-dark;
+      color: $color-dark-grey;
       font-weight: 500;
       margin-right: 1rem;
       &__link {
@@ -60,10 +61,10 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: $screen-large) {
   .header {
     &__sub__container {
-      width: 1000px;
+      width: 1024px;
       height: 6rem;
       margin: auto;
     }

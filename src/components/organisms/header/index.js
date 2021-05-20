@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo, Nav } from '../../molecules';
-import './header.scss';
+import './Header.scss';
 import logoImage from '../../../assets/images/logo.png';
 import metadata from './metadata.json';
 
