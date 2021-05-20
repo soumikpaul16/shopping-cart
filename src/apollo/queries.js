@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost';
 
 const GET_CATEGORIES = gql`
   query getCategories {
-    get @rest(type: "get", path: "categories") {
+    categories @rest(type: "categories", path: "categories") {
       name
       key
       description
@@ -16,15 +16,22 @@ const GET_CATEGORIES = gql`
 
 const GET_PRODUCTS = gql`
   query getProducts {
-    get @rest(type: "get", path: "products") {
-      data
+    products @rest(type: "products", path: "products") {
+      name
+      imageURL
+      description
+      price
+      stock
+      category
+      sku
+      id
     }
   }
 `;
 
 const GET_BANNERS = gql`
   query getBanners {
-    get @rest(type: "get", path: "banners") {
+    banners @rest(type: "banners", path: "banners") {
       bannerImageUrl
       bannerImageAlt
       isActive
@@ -36,7 +43,7 @@ const GET_BANNERS = gql`
 
 const GET_CART = gql`
   query getAddToChart {
-    person @rest(type: "get", path: "addToChart") {
+    addToCart @rest(type: "addToCart", path: "addToChart") {
       data
     }
   }
