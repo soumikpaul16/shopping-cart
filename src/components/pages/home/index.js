@@ -28,22 +28,17 @@ const Home = () => {
       {categories.length > 0
         && categories
           .sort((a, b) => a.order - b.order)
-          .map((category, index) => {
-            if (category.enabled) {
-              return (
-                <CategorySection
-                  key={category.id}
-                  reverseContent={!((index + 1) % 2)}
-                  imageUrl={category.imageUrl}
-                  name={category.name}
-                  description={category.description}
-                  buttonContent={category.key}
-                  redirectPath={`products/${category.id}`}
-                />
-              );
-            }
-            return null;
-          })}
+          .map((category, index) => (category.enabled ? (
+            <CategorySection
+              key={category.id}
+              reverseContent={!((index + 1) % 2)}
+              imageUrl={category.imageUrl}
+              name={category.name}
+              description={category.description}
+              buttonContent={category.key}
+              redirectPath={`products/${category.id}`}
+            />
+          ) : null))}
     </>
   );
 };
