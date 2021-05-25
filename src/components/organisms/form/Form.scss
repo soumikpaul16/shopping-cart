@@ -1,0 +1,44 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+.form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: $color-dark-grey;
+  //  min-height: 72vh;
+  &__title {
+    letter-spacing: 0;
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+  &__button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+@media (min-width: $screen-mid) {
+  .form {
+    width: 700px;
+    margin: auto;
+    margin-top: 2rem;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    &__title {
+      flex-grow: 1;
+      margin: 0.5rem;
+    }
+    &__fields {
+      flex-grow: 1;
+    }
+  }
+}
+@media (min-width: $screen-large) {
+}

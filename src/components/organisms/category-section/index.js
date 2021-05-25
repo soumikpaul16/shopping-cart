@@ -13,7 +13,7 @@ const CategorySection = ({
   buttonContent,
   redirectPath,
 }) => (
-  <div
+  <section
     className={classNames(
       reverseContent ? 'category--reverse' : '',
       'category',
@@ -28,7 +28,7 @@ const CategorySection = ({
       description={description}
       redirectPath={redirectPath}
     />
-  </div>
+  </section>
 );
 
 CategorySection.propTypes = {

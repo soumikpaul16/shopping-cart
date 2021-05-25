@@ -1,0 +1,39 @@
+{
+  "register": {
+    "title": { "id": "register.text" },
+    "description": { "id": "register.description" },
+    "submitBtn": { "id": "register.text" },
+    "elements": [
+      {
+        "id": "first-name",
+        "label": "register.firstName",
+        "placeholder": "xxxxxxx",
+        "type": "email"
+      },
+      {
+        "id": "last-name",
+        "label": "register.lastName",
+        "placeholder": "xxxxxxx",
+        "type": "email"
+      },
+      {
+        "id": "email",
+        "label": "register.email",
+        "placeholder": "xxx@xxx.com",
+        "type": "email"
+      },
+      {
+        "id": "password",
+        "label": "register.password",
+        "placeholder": "xxxxxxx",
+        "type": "password"
+      },
+      {
+        "id": "confirm-password",
+        "label": "register.confirmPassword",
+        "placeholder": "xxxxxxx",
+        "type": "password"
+      }
+    ]
+  }
+}

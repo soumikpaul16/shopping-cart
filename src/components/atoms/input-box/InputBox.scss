@@ -1,0 +1,59 @@
+@import "../../../assets/styles/variables/colors";
+
+.input {
+  &__wrap {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  &__label,
+  &__box {
+    transition: all 0.2s;
+    //   Enable panning and pinch zoom gestures, but disable additional non-standard gestures such as double-tap to zoom. Disabling double-tap to zoom removes the need for browsers to delay the generation of click events when the user taps the screen. This is an alias for "pan-x pan-y pinch-zoom"
+    touch-action: manipulation;
+  }
+
+  &__box {
+    padding: 0.5rem 0;
+    border: 0;
+    border-bottom: 0.1rem solid $color-light-grey;
+    font-family: inherit;
+    border-radius: 0;
+    cursor: text;
+    &:focus {
+      outline: 0;
+      border-bottom: 0.1rem solid $color-blue;
+    }
+    &::-webkit-input-placeholder {
+      opacity: 0;
+      transition: inherit;
+    }
+    /**
+    * Show the placeholder when the input is focused.
+    */
+    &:focus::-webkit-input-placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__box + &__label {
+    font-size: 0.7rem;
+    cursor: text;
+    max-width: 66.66%;
+    overflow: hidden;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+  }
+
+  &__box:not(:placeholder-shown) + &__label,
+  &__box:focus + &__label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  &__box:focus + &__label {
+    color: $color-blue;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "signIn": {
+    "title": { "id": "login.text" },
+    "description": { "id": "login.description" },
+    "submitBtn": { "id": "login.text" },
+    "elements": [
+      {
+        "id": "email",
+        "label": "login.email",
+        "placeholder": "xxx@xxx.com",
+        "type": "email"
+      },
+      {
+        "id": "password",
+        "label": "login.password",
+        "placeholder": "xxxxxx",
+        "type": "password"
+      }
+    ]
+  }
+}
