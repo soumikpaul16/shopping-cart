@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/colors";
+
+.products {
+  &__container {
+    padding-top: 3rem;
+    display: grid;
+    grid-column-gap: 0.5rem;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(1, auto);
+  }
+  &__category-links {
+    display: none;
+  }
+  @media (min-width: $screen-small) {
+    &__container {
+      padding-top: 0;
+    }
+    display: flex;
+    &__category-links {
+      display: block;
+      width: 25%;
+      background-color: $color-light-grey;
+      &--fixed {
+        position: fixed;
+        width: inherit;
+      }
+      &__item {
+        display: block;
+        padding: 1rem;
+        color: $color-grey;
+        border-bottom: solid 1px $color-translucent-grey;
+        cursor: pointer;
+      }
+    }
+    &__container {
+      width: 75%;
+      grid-template-columns: repeat(2, 49%);
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+  @media (min-width: $screen-mid) {
+    width: 100%;
+    &__container {
+      width: 72%;
+      grid-template-columns: repeat(3, 33%);
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+  @media (min-width: $screen-large) {
+    width: $screen-large;
+    margin: auto;
+    &__category-links {
+      &--fixed {
+        width: 256px;
+      }
+    }
+    &__container {
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+}

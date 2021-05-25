@@ -14,8 +14,16 @@ const Home = () => {
   useEffect(() => {
     let isCancelled = false;
     if (!isCancelled && bannersData?.data && categoriesData?.data) {
-      setBanners(bannersData.data.banners);
-      setCategories(categoriesData.data.categories);
+      setBanners(
+        bannersData.data.banners
+          .sort((a, b) => a.order - b.order)
+          .filter((banner) => banner.isActive),
+      );
+      setCategories(
+        categoriesData.data.categories
+          .sort((a, b) => a.order - b.order)
+          .filter((category) => category.enabled),
+      );
     }
     return () => {
       isCancelled = true;
@@ -26,19 +34,17 @@ const Home = () => {
     <>
       {banners.length > 0 && <Carousel bannersInfo={banners} />}
       {categories.length > 0
-        && categories
-          .sort((a, b) => a.order - b.order)
-          .map((category, index) => (category.enabled ? (
-            <CategorySection
-              key={category.id}
-              reverseContent={!((index + 1) % 2)}
-              imageUrl={category.imageUrl}
-              name={category.name}
-              description={category.description}
-              buttonContent={category.key}
-              redirectPath={`products/${category.id}`}
-            />
-          ) : null))}
+        && categories.map((category, index) => (
+          <CategorySection
+            key={category.id}
+            reverseContent={!((index + 1) % 2)}
+            imageUrl={category.imageUrl}
+            name={category.name}
+            description={category.description}
+            buttonContent={category.key}
+            redirectPath={`products/${category.id}`}
+          />
+        ))}
     </>
   );
 };

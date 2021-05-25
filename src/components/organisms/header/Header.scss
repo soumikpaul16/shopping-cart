@@ -30,7 +30,7 @@
   }
 }
 
-@media (min-width: $screen-mid) {
+@media (min-width: $screen-small) {
   .header {
     &__sub__container {
       height: 5rem;
@@ -43,7 +43,7 @@
       align-self: flex-end;
       margin-bottom: 1rem;
       &__link {
-        margin-left: 2rem;
+        margin-left: 1rem;
         cursor: pointer;
       }
     }
@@ -62,11 +62,15 @@
     }
   }
 }
-
 @media (min-width: $screen-large) {
   .header {
+    &__nav__items {
+      &__link {
+        margin-left: 2rem;
+      }
+    }
     &__sub__container {
-      width: 1024px;
+      width: $screen-large;
       height: 6rem;
       margin: auto;
     }

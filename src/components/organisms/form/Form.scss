@@ -24,9 +24,10 @@
     padding: 0.5rem;
   }
 }
-@media (min-width: $screen-mid) {
+@media (min-width: $screen-small) {
   .form {
-    width: 700px;
+    width: 100%;
+    padding: 2rem;
     margin: auto;
     margin-top: 2rem;
     flex-direction: row;
@@ -40,5 +41,14 @@
     }
   }
 }
+@media (min-width: $screen-mid) {
+  .form {
+    width: $screen-mid;
+    padding: 2rem;
+  }
+}
 @media (min-width: $screen-large) {
+  .form {
+    width: $screen-large;
+  }
 }

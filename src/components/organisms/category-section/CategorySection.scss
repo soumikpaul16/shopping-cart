@@ -21,14 +21,14 @@
 
 @media (min-width: $screen-large) {
   .category {
-    width: 1024px;
+    width: $screen-large;
     margin: auto;
     &__image__wrapper {
-        flex: 2;
-        padding: 4rem 0 4em 0;
-        img {
-          width: 70%;
-        }
+      flex: 2;
+      padding: 4rem 0 4em 0;
+      img {
+        width: 70%;
       }
+    }
   }
 }
