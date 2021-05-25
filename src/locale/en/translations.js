@@ -2,7 +2,7 @@ export default {
   header: {
     home: 'Home',
     products: 'Products',
-    login: 'Login',
+    signIn: 'Sign In',
     register: 'Register',
     carousel: {
       next: 'NEXT',
@@ -13,8 +13,8 @@ export default {
     copyright: 'Copyright',
     message: '2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd',
   },
-  login: {
-    text: 'Login',
+  signIn: {
+    text: 'Sign In',
     description: 'Get access to your Orders, Wishlist and Recommendations.',
     email: 'Email',
     password: 'Password',
