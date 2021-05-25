@@ -1,0 +1,16 @@
+@import "../assets/styles/variables/breakpoints";
+
+.layout {
+  &__container {
+    padding-top: 4rem;
+    min-height: 95vh;
+    @media (min-width: $screen-small) {
+      min-height: 97vh;
+      padding-top: 5rem;
+    }
+    @media (min-width: $screen-large) {
+      min-height: 93vh;
+      padding-top: 6rem;
+    }
+  }
+}

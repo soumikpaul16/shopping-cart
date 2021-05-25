@@ -1,11 +1,11 @@
 import { RestLink } from 'apollo-link-rest';
 
-const restLink = new RestLink({
+export const restLink = new RestLink({
   uri: 'https://sabka-bazar-2021.herokuapp.com/',
   // will put in env file
 });
 
-const cache = {
+export const cache = {
   typePolicies: {
     products: {
       keyFields: [
@@ -44,5 +44,3 @@ const cache = {
     },
   },
 };
-
-export { cache, restLink };

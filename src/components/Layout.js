@@ -11,7 +11,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="layout__container">
         <AppRouter />
       </main>
       <Footer />
