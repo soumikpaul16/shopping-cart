@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AppRouter from '../AppRouter';
 import { Footer, Header } from './organisms';
+import './Layout.scss';
 
 const Layout = () => {
   const location = useLocation();
