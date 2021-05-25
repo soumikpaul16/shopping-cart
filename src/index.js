@@ -1,15 +1,14 @@
+import { ApolloProvider } from '@apollo/react-hooks';
 import { ApolloClient, InMemoryCache } from 'apollo-boost';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/react-hooks';
-import AppRouter from './AppRouter';
+import { cache, restLink } from './apollo/config';
 import './assets/styles/_global.scss';
-import { Footer, Header } from './components/organisms';
+import Layout from './components/Layout';
 import translations from './locale/en/translations';
 import flattenMessages from './utils';
-import { cache, restLink } from './apollo/config';
 
 // Apollo Client Setup
 const client = new ApolloClient({
@@ -21,11 +20,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
       <IntlProvider locale="en" messages={flattenMessages(translations)}>
-        <Header />
-        <main className="container">
-          <AppRouter />
-        </main>
-        <Footer />
+        <Layout />
       </IntlProvider>
     </BrowserRouter>
   </ApolloProvider>,

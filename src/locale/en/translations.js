@@ -28,4 +28,7 @@ export default {
     password: 'Password',
     confirmPassword: 'Confirm Password',
   },
+  products: {
+    buyNow: 'Buy Now',
+  },
 };
