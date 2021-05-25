@@ -1,0 +1,28 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+.select {
+  &__container {
+    position: fixed;
+    width: 100%;
+  }
+
+  &__option {
+    outline: none;
+    width: inherit;
+    padding: 1rem;
+    background-color: $color-red;
+    border: none;
+    color: $color-white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  @media (min-width: $screen-small) {
+    &__container {
+      &--hide {
+        display: none;
+      }
+    }
+  }
+}
