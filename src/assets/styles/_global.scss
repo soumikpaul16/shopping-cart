@@ -22,7 +22,7 @@ a {
 .container {
   padding-top: 4rem;
   min-height: 95vh;
-  @media (min-width: $screen-mid) {
+  @media (min-width: $screen-small) {
     min-height: 97vh;
     padding-top: 5rem;
   }
