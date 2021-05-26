@@ -8,7 +8,7 @@ import { GET_CART } from '../../../apollo/queries';
 
 const Header = () => {
   const { data } = useQuery(GET_CART);
-
+  console.log('data', data);
   return (
     <header className="header">
       <div className="header__sub__container">

@@ -12,6 +12,7 @@ export const restLink = new RestLink({
 
 const cartInitialValue = {
   count: 0,
+  totalCost: 0,
   products: {},
 };
 

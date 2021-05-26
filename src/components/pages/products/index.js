@@ -4,7 +4,7 @@ import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 import mutations from '../../../apollo/mutations';
 import { GET_CATEGORIES, GET_PRODUCTS } from '../../../apollo/queries';
 import useMediaQuery from '../../../utils/useMediaQuery';
-import { DropDown, RouteLink } from '../../atoms';
+import { DropDown } from '../../atoms';
 import { ProductCard, SidePanel } from '../../organisms';
 import './Products.scss';
 
@@ -29,8 +29,8 @@ const Products = () => {
     history.push(value ? `/products/${value}` : '/products');
   };
 
-  const handleBuyNow = (productId, stock) => {
-    addToCart(productId, stock);
+  const handleBuyNow = (product) => {
+    addToCart(product);
   };
 
   const viewAllProducts = () => {

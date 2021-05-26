@@ -34,7 +34,7 @@ const ProductCard = ({ data, handleClick }) => {
             <Button
               aria-label={`click to buy ${data.name} with price ${data.price}`}
               className="product-card__details__button"
-              onClick={() => handleClick(data.id, data.stock)}
+              onClick={() => handleClick(data)}
             >
               <FormattedMessage id={metadata?.productCard.buyNow.id} />
             </Button>
@@ -43,7 +43,7 @@ const ProductCard = ({ data, handleClick }) => {
           <Button
             aria-label={`click to buy ${data.name} with price ${data.price}`}
             className="product-card__details--mobile product-card__details__button"
-            onClick={() => handleClick(data.id, data.stock)}
+            onClick={() => handleClick(data)}
           >
             <FormattedMessage id={metadata?.productCard.buyNow.id} />
             {` @ Rs.${data.price}`}
