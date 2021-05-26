@@ -1,11 +1,12 @@
-import { useQuery } from '@apollo/react-hooks';
-import React, { useState, useEffect } from 'react';
-import './Products.scss';
+import { useQuery } from '@apollo/client';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
+import mutations from '../../../apollo/mutations';
+import { GET_CATEGORIES, GET_PRODUCTS } from '../../../apollo/queries';
 import useMediaQuery from '../../../utils/useMediaQuery';
 import { DropDown, RouteLink } from '../../atoms';
-import { GET_PRODUCTS, GET_CATEGORIES } from '../../../apollo/queries';
 import { ProductCard } from '../../organisms';
+import './Products.scss';
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -17,26 +18,35 @@ const Products = () => {
   const location = useLocation();
   const notMobile = useMediaQuery('(min-width: 481px)'); // for ipad and laptops
 
+  // apollo client
   const categoriesData = useQuery(GET_CATEGORIES);
   const productsData = useQuery(GET_PRODUCTS);
+  const { addToCart } = mutations;
 
+  // functions
   const handleChange = (e) => {
     const { value } = e.target;
     history.push(value ? `/products/${value}` : '/products');
   };
+
+  const handleBuyNow = (productId, stock) => {
+    addToCart(productId, stock);
+  };
+
   const viewAllProducts = () => {
     setFilteredProducts(allProducts);
     setSelectedCategory('');
   };
 
+  // effects
   useEffect(() => {
     let isCancelled = false;
     if (!isCancelled && productsData?.data && categoriesData?.data) {
       setAllProducts(productsData.data.products);
       setCategories(
         categoriesData.data.categories
-          .sort((a, b) => a.order - b.order)
-          .filter((category) => category.enabled),
+          .filter((category) => category.enabled)
+          .sort((a, b) => a.order - b.order),
       );
     }
     return () => {
@@ -94,7 +104,11 @@ const Products = () => {
       )}
       <div className="products__container">
         {filteredProducts.map((product) => (
-          <ProductCard key={product.sku} data={product} />
+          <ProductCard
+            key={product.sku}
+            data={product}
+            handleClick={handleBuyNow}
+          />
         ))}
       </div>
     </div>

@@ -1,8 +1,8 @@
+import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { GET_BANNERS, GET_CATEGORIES } from '../../../apollo/queries';
 import { Carousel } from '../../molecules';
 import { CategorySection } from '../../organisms';
-import { GET_BANNERS, GET_CATEGORIES } from '../../../apollo/queries';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -16,13 +16,13 @@ const Home = () => {
     if (!isCancelled && bannersData?.data && categoriesData?.data) {
       setBanners(
         bannersData.data.banners
-          .sort((a, b) => a.order - b.order)
-          .filter((banner) => banner.isActive),
+          .filter((banner) => banner.isActive)
+          .sort((a, b) => a.order - b.order),
       );
       setCategories(
         categoriesData.data.categories
-          .sort((a, b) => a.order - b.order)
-          .filter((category) => category.enabled),
+          .filter((category) => category.enabled)
+          .sort((a, b) => a.order - b.order),
       );
     }
     return () => {

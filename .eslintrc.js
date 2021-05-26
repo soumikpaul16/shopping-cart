@@ -18,5 +18,6 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/button-has-type': 0,
     'import/no-unresolved': 0,
+    'no-nested-ternary': 0,
   },
 };

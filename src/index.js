@@ -1,5 +1,4 @@
-import { ApolloProvider } from '@apollo/react-hooks';
-import { ApolloClient, InMemoryCache } from 'apollo-boost';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
@@ -17,12 +16,12 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <IntlProvider locale="en" messages={flattenMessages(translations)}>
+  <BrowserRouter>
+    <IntlProvider locale="en" messages={flattenMessages(translations)}>
+      <ApolloProvider client={client}>
         <Layout />
-      </IntlProvider>
-    </BrowserRouter>
-  </ApolloProvider>,
+      </ApolloProvider>
+    </IntlProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

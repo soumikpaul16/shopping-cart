@@ -6,7 +6,7 @@ import { Button, Image } from '../../atoms';
 import metadata from './metadata.json';
 import './ProductCard.scss';
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, handleClick }) => {
   const laptop = useMediaQuery('(min-width: 769px)'); // for laptops
   return (
     <div className="product-card">
@@ -34,7 +34,7 @@ const ProductCard = ({ data }) => {
             <Button
               aria-label={`click to buy ${data.name} with price ${data.price}`}
               className="product-card__details__button"
-              onClick={() => {}}
+              onClick={() => handleClick(data.id, data.stock)}
             >
               <FormattedMessage id={metadata?.productCard.buyNow.id} />
             </Button>
@@ -43,7 +43,7 @@ const ProductCard = ({ data }) => {
           <Button
             aria-label={`click to buy ${data.name} with price ${data.price}`}
             className="product-card__details--mobile product-card__details__button"
-            onClick={() => {}}
+            onClick={() => handleClick(data.id, data.stock)}
           >
             <FormattedMessage id={metadata?.productCard.buyNow.id} />
             {` @ Rs.${data.price}`}
@@ -54,12 +54,14 @@ const ProductCard = ({ data }) => {
   );
 };
 
-ProductCard.defaultProps = {
-  data: {},
-};
-
 ProductCard.propTypes = {
   data: PropTypes.object,
+  handleClick: PropTypes.func,
+};
+
+ProductCard.defaultProps = {
+  data: {},
+  handleClick: () => {},
 };
 
 export default ProductCard;

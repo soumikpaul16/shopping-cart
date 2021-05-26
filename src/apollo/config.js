@@ -1,10 +1,21 @@
 import { RestLink } from 'apollo-link-rest';
+import { makeVar } from '@apollo/client';
 
 export const restLink = new RestLink({
   uri: 'https://sabka-bazar-2021.herokuapp.com/',
   // will put in env file
 });
 
+/**
+ * Set initial values when we create cache variables.
+ */
+
+const cartInitialValue = {
+  count: 0,
+  products: {},
+};
+
+export const cartVar = makeVar(cartInitialValue);
 export const cache = {
   typePolicies: {
     products: {
@@ -30,9 +41,6 @@ export const cache = {
         'id',
       ],
     },
-    addToCart: {
-      keyFields: [],
-    },
     banners: {
       keyFields: [
         'bannerImageUrl',
@@ -41,6 +49,15 @@ export const cache = {
         'order',
         'id',
       ],
+    },
+    Query: {
+      fields: {
+        cart: {
+          read() {
+            return cartVar();
+          },
+        },
+      },
     },
   },
 };
