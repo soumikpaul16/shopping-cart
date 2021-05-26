@@ -1,10 +1,10 @@
 {
   "buttons": {
     "next": {
-      "id": "header.carousel.next"
+      "id": "carousel.next"
     },
     "previous": {
-      "id": "header.carousel.previous"
+      "id": "carousel.previous"
     }
   }
 }

@@ -5,7 +5,7 @@ import mutations from '../../../apollo/mutations';
 import { GET_CATEGORIES, GET_PRODUCTS } from '../../../apollo/queries';
 import useMediaQuery from '../../../utils/useMediaQuery';
 import { DropDown, RouteLink } from '../../atoms';
-import { ProductCard } from '../../organisms';
+import { ProductCard, SidePanel } from '../../organisms';
 import './Products.scss';
 
 const Products = () => {
@@ -81,19 +81,12 @@ const Products = () => {
   return (
     <div className="products">
       {notMobile ? (
-        <div className="products__category-links">
-          <div className="products__category-links--fixed">
-            {categories.map((category) => (
-              <RouteLink
-                key={category.id}
-                className="products__category-links__item"
-                path={`products/${category.id}`}
-              >
-                {category.name}
-              </RouteLink>
-            ))}
-          </div>
-        </div>
+        <SidePanel
+          links={categories.map((category) => ({
+            ...category,
+            ...{ path: `products/${category.id}` },
+          }))}
+        />
       ) : (
         <DropDown
           options={[...categories, { id: '', name: 'All Products' }]}

@@ -25,6 +25,11 @@
     display: flex;
     justify-content: flex-start;
   }
+  &--right-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   &__logo {
     align-self: center;
   }
@@ -52,7 +57,7 @@
       font-size: 0.8rem;
       color: $color-dark-grey;
       font-weight: 500;
-      margin-right: 1rem;
+      margin-left: 2rem;
       &__link {
         cursor: pointer;
       }

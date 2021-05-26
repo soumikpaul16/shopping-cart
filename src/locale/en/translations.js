@@ -4,10 +4,14 @@ export default {
     products: 'Products',
     signIn: 'Sign In',
     register: 'Register',
-    carousel: {
-      next: 'NEXT',
-      previous: 'PREV',
+    cart: {
+      items: 'items',
+      item: 'item',
     },
+  },
+  carousel: {
+    next: 'NEXT',
+    previous: 'PREV',
   },
   footer: {
     copyright: 'Copyright',

@@ -1,0 +1,10 @@
+{
+  "cart": {
+    "items": {
+      "id": "header.cart.items"
+    },
+    "item": {
+      "id": "header.cart.item"
+    }
+  }
+}
