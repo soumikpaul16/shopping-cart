@@ -76,6 +76,9 @@
       color: $color-white;
       cursor: pointer;
       padding: 0.5rem;
+      &:active {
+        transform: translateY(-50%);
+      }
 
       &--right {
         right: 0;
