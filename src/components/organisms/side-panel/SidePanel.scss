@@ -4,6 +4,7 @@
 .side-panel {
   &__links {
     display: none;
+    min-height: 85vh;
   }
   @media (min-width: $screen-mid) {
     &__links {

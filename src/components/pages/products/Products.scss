@@ -4,6 +4,7 @@
 .products {
   &__container {
     padding-top: 3rem;
+    padding-bottom: 3rem;
     display: grid;
     grid-column-gap: 0.5rem;
     grid-template-columns: repeat(1, 100%);
