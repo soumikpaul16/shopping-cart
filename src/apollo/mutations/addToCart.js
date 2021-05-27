@@ -11,6 +11,7 @@ const addToCart = (cartVar) => (product) => {
       ...products,
       ...{
         [id]: {
+          ...product,
           stock,
           qty: productInCart
             ? productNotAvailable

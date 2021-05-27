@@ -9,6 +9,7 @@ const removeFromCart = (cartVar) => (id) => {
       ...products,
       ...{
         [id]: {
+          ...products[id],
           qty: qty ? qty - 1 : 0,
           totalPrice: totalPrice ? totalPrice - price : 0,
         },

@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
@@ -7,7 +7,7 @@ import { cache, restLink } from './apollo/config';
 import './assets/styles/_global.scss';
 import Layout from './components/Layout';
 import translations from './locale/en/translations';
-import flattenMessages from './utils';
+import { flattenMessages } from './utils';
 
 // Apollo Client Setup
 const client = new ApolloClient({
