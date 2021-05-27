@@ -4,10 +4,10 @@
   &__container {
     padding-top: 4rem;
     min-height: 100vh;
-    @media (min-width: $screen-small) {
+    @media (min-width: $screen-mid) {
       padding-top: 5rem;
     }
-    @media (min-width: $screen-large) {
+    @media (min-width: $screen-x-large) {
       padding-top: 6rem;
     }
   }

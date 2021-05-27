@@ -67,7 +67,7 @@
       display: block;
     }
   }
-  @media (min-width: $screen-small) {
+  @media (min-width: $screen-mid) {
     width: 100%;
     height: 24rem;
     border-bottom: 1px dashed $color-grey;
@@ -92,7 +92,7 @@
       }
     }
   }
-  @media (min-width: $screen-mid) {
+  @media (min-width: $screen-large) {
     width: 100%;
     height: 31rem;
     border-bottom: 1px dashed $color-grey;
@@ -136,7 +136,7 @@
       }
     }
   }
-  @media (min-width: $screen-large) {
+  @media (min-width: $screen-x-large) {
     height: 27rem;
   }
 }

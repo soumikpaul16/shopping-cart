@@ -18,7 +18,7 @@
     font-weight: 500;
     cursor: pointer;
   }
-  @media (min-width: $screen-small) {
+  @media (min-width: $screen-mid) {
     &__container {
       &--hide {
         display: none;

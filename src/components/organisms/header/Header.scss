@@ -35,7 +35,7 @@
   }
 }
 
-@media (min-width: $screen-small) {
+@media (min-width: $screen-mid) {
   .header {
     &__sub__container {
       height: 5rem;
@@ -67,7 +67,7 @@
     }
   }
 }
-@media (min-width: $screen-large) {
+@media (min-width: $screen-x-large) {
   .header {
     &__nav__items {
       &__link {
@@ -75,7 +75,7 @@
       }
     }
     &__sub__container {
-      width: $screen-large;
+      width: $screen-x-large;
       height: 6rem;
       margin: auto;
     }

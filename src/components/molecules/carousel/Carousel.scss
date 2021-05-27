@@ -57,14 +57,7 @@
   }
 }
 
-@media (min-width: $screen-large) {
-  .carousel {
-    width: 1023px;
-    height: 25rem;
-  }
-}
-
-@media (min-width: $screen-small) {
+@media (min-width: $screen-mid) {
   .carousel {
     height: 20rem;
     &__button {
@@ -90,5 +83,12 @@
         visibility: hidden;
       }
     }
+  }
+}
+
+@media (min-width: $screen-x-large) {
+  .carousel {
+    width: 1023px;
+    height: 25rem;
   }
 }

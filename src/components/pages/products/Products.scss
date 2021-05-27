@@ -10,7 +10,7 @@
     grid-template-rows: repeat(1, auto);
   }
 
-  @media (min-width: $screen-small) {
+  @media (min-width: $screen-mid) {
     display: flex;
     &__container {
       padding-top: 0;
@@ -19,7 +19,7 @@
       grid-template-rows: repeat(2, auto);
     }
   }
-  @media (min-width: $screen-mid) {
+  @media (min-width: $screen-large) {
     width: 100%;
     &__container {
       width: 72%;
@@ -27,8 +27,8 @@
       grid-template-rows: repeat(3, auto);
     }
   }
-  @media (min-width: $screen-large) {
-    width: $screen-large;
+  @media (min-width: $screen-x-large) {
+    width: $screen-x-large;
     margin: auto;
     &__container {
       grid-template-columns: repeat(4, 25%);

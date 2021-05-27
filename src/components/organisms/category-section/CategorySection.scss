@@ -19,9 +19,9 @@
   }
 }
 
-@media (min-width: $screen-large) {
+@media (min-width: $screen-x-large) {
   .category {
-    width: $screen-large;
+    width: $screen-x-large;
     margin: auto;
     &__image__wrapper {
       flex: 2;

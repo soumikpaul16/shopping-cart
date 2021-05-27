@@ -5,7 +5,7 @@
   &__links {
     display: none;
   }
-  @media (min-width: $screen-small) {
+  @media (min-width: $screen-mid) {
     &__links {
       display: block;
       width: 25%;
@@ -23,7 +23,7 @@
       }
     }
   }
-  @media (min-width: $screen-large) {
+  @media (min-width: $screen-x-large) {
     &__links {
       &--fixed {
         width: 256px;
