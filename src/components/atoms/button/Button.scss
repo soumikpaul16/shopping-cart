@@ -12,4 +12,8 @@
   &:active {
     transform: translateY(0.5px);
   }
+  &:disabled {
+    background-color: $color-light-grey;
+    cursor: not-allowed;
+  }
 }

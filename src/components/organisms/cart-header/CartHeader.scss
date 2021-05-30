@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+.cart {
+  &__header {
+    font-size: 0.8rem;
+    padding: 1rem 1rem;
+    background-color: $color-white;
+    font-weight: 400;
+    position: relative;
+    &__empty {
+      background-color: $color-black;
+      color: $color-white;
+    }
+    &__cross {
+      font-weight: normal;
+      visibility: hidden;
+      position: absolute;
+      right: 1rem;
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+}
+@media (min-width: $screen-large) {
+  .cart {
+    &__header {
+      margin-top: 0;
+      background-color: $color-black;
+      color: $color-white;
+      &__cross {
+        visibility: visible;
+      }
+    }
+  }
+}

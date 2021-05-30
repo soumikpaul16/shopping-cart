@@ -1,0 +1,47 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+.cart {
+  &__footer {
+    margin-top: 0.5rem;
+    text-align: center;
+    position: fixed;
+    box-shadow: 0px -5px 5px $color-light-grey;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-white;
+    &__content {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+    &__button {
+      background-color: $color-red;
+      border-radius: 0.1rem;
+      margin: 0.8rem auto;
+      width: 95%;
+      border: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      &--center {
+        justify-content: space-around;
+      }
+    }
+  }
+}
+@media (min-width: $screen-large) {
+  .cart {
+    &__header {
+      margin-top: 0;
+      background-color: $color-black;
+      color: $color-white;
+      &__cross {
+        visibility: visible;
+      }
+    }
+    &__footer {
+      width: 25rem;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "cart": {
+    "myCart": "cart.myCart",
+    "items": "cart.items",
+    "item": "cart.item",
+    "emptyCart": {
+      "header": "cart.emptyCart.header",
+      "content": "cart.emptyCart.content"
+    },
+    "cheaperAd": "cart.cheaperAd",
+    "footer": {
+      "paymentAd": "cart.footer.paymentAd",
+      "button": {
+        "empty": "cart.footer.button.empty",
+        "notEmpty": "cart.footer.button.notEmpty"
+      }
+    },
+    "currency": "cart.currency",
+    "cheaperAdImage": { "path": "/images/lowest-price.png" }
+  }
+}

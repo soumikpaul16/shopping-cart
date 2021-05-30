@@ -36,7 +36,7 @@ const ProductCard = ({ data, handleClick }) => {
               className="product-card__details__button"
               onClick={() => handleClick(data)}
             >
-              <FormattedMessage id={metadata?.productCard.buyNow.id} />
+              <FormattedMessage id={metadata?.productCard.buyNow} />
             </Button>
           </div>
         ) : (
@@ -45,7 +45,7 @@ const ProductCard = ({ data, handleClick }) => {
             className="product-card__details--mobile product-card__details__button"
             onClick={() => handleClick(data)}
           >
-            <FormattedMessage id={metadata?.productCard.buyNow.id} />
+            <FormattedMessage id={metadata?.productCard.buyNow} />
             {` @ Rs.${data.price}`}
           </Button>
         )}

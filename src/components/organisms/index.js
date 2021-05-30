@@ -4,3 +4,6 @@ export { default as CategorySection } from './category-section';
 export { default as Form } from './form';
 export { default as ProductCard } from './product-card';
 export { default as SidePanel } from './side-panel';
+export { default as CartHeader } from './cart-header';
+export { default as CartFooter } from './cart-footer';
+export { default as CartProductSection } from './cart-product-section';

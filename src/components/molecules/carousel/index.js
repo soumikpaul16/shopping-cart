@@ -76,7 +76,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="previous banner"
       >
-        <FormattedMessage id={carouselMetadata?.buttons?.previous?.id} />
+        <FormattedMessage id={carouselMetadata?.buttons?.previous} />
       </Button>
       <Button
         className="carousel__button carousel__button--right"
@@ -87,7 +87,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="next banner"
       >
-        <FormattedMessage id={carouselMetadata?.buttons?.next?.id} />
+        <FormattedMessage id={carouselMetadata?.buttons?.next} />
       </Button>
       <div className="carousel__nav">
         {bannersInfo.map((banner) => (

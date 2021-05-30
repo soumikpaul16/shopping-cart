@@ -4,7 +4,7 @@ import { RouteLink } from '../../atoms';
 import './SidePanel.scss';
 
 const SidePanel = ({ links }) => (
-  <div className="side-panel__links">
+  <aside className="side-panel__links">
     <div className="side-panel__links--fixed">
       {links.map((link) => (
         <RouteLink
@@ -16,7 +16,7 @@ const SidePanel = ({ links }) => (
         </RouteLink>
       ))}
     </div>
-  </div>
+  </aside>
 );
 
 SidePanel.propTypes = {

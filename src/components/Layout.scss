@@ -4,6 +4,9 @@
   &__container {
     padding-top: 4rem;
     min-height: 100vh;
+    &--overlay {
+      overflow-y: hidden;
+    }
     @media (min-width: $screen-mid) {
       padding-top: 5rem;
     }
