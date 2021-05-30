@@ -3,11 +3,13 @@
 
 ## General Descriptions:
 - Atomic Design is used for creating the components.
+```
     --components
         --atoms
         --molecules
         --organisms
         --pages
+```
 - For Styling Scss is used. All the components are customized, no external library is used to make any components or functionality.
 - For common functions and custom hooks. Please refer utils folder.
 - For State Management Apollo Client with GraphQL is used. Also it consumes rest APIs not GraphQL Queries from backend.
