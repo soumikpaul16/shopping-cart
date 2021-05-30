@@ -1,0 +1,37 @@
+@import "../../../assets//styles/variables/breakpoints";
+@import "../../../assets/styles/variables/colors";
+
+.drawer {
+  &__content {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    height: calc(100vh - 4rem);
+  }
+  &__overlay {
+    background: $color-translucent-black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 9;
+  }
+}
+@media (min-width: $screen-mid) {
+  .drawer {
+    &__content {
+      height: calc(100vh - 5rem);
+    }
+  }
+}
+
+@media (min-width: $screen-x-large) {
+  .drawer {
+    &__content {
+      height: calc(100vh - 6rem);
+    }
+  }
+}
