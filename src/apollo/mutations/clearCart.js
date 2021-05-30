@@ -3,6 +3,7 @@ const clearCart = (cartVar) => () => {
     count: 0,
     totalCost: 0,
     products: {},
+    isCartOpen: false,
   };
 
   cartVar(newCartData);

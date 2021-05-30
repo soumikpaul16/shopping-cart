@@ -14,6 +14,7 @@ const cartInitialValue = {
   count: 0,
   totalCost: 0,
   products: {},
+  isCartOpen: false,
 };
 
 export const cartVar = makeVar(cartInitialValue);

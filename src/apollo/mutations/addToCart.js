@@ -1,5 +1,7 @@
 const addToCart = (cartVar) => (product) => {
-  const { count, totalCost, products } = cartVar();
+  const {
+    count, totalCost, products, isCartOpen,
+  } = cartVar();
   const { price, stock, id } = product;
   const productInCart = products[id];
   const productNotAvailable = productInCart && productInCart.qty === stock;
@@ -7,6 +9,7 @@ const addToCart = (cartVar) => (product) => {
   const newCartData = {
     count: productNotAvailable ? count : count + 1,
     totalCost: productNotAvailable ? totalCost : totalCost + price,
+    isCartOpen,
     products: {
       ...products,
       ...{

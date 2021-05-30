@@ -1,10 +1,13 @@
 const removeFromCart = (cartVar) => (id) => {
-  const { count, totalCost, products } = cartVar();
+  const {
+    count, totalCost, products, isCartOpen,
+  } = cartVar();
   const { qty, price, totalPrice } = products[id];
 
   const newCartData = {
     count: qty ? count - 1 : count,
     totalCost: qty ? totalCost - price : totalCost,
+    isCartOpen,
     products: {
       ...products,
       ...{
