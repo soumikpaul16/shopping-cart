@@ -65,9 +65,13 @@
   .cart {
     &__products {
       max-height: calc(100vh - 15rem);
-      .Action-Wrap {
-        .Action {
-          border-radius: 25rem;
+      &__section {
+        &__description {
+          &__action-wrap {
+            &__button {
+              border-radius: 25rem;
+            }
+          }
         }
       }
     }

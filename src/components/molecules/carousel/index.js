@@ -35,12 +35,10 @@ const Carousel = ({ bannersInfo }) => {
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 15) {
-      // do your stuff here for left swipe
       handleSlide(currentSlide === bannersInfo.length ? 1 : currentSlide + 1);
     }
 
     if (touchStart - touchEnd < -15) {
-      // do your stuff here for right swipe
       handleSlide(currentSlide === 1 ? bannersInfo.length : currentSlide - 1);
     }
   };
