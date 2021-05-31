@@ -3,8 +3,10 @@ import React from 'react';
 import { Button } from '../../atoms';
 import './CartProductSection.scss';
 
-const CartHeader = ({ product, addToCart, removeFromCart }) => (
-  <section key={product?.id} className="cart__products__section">
+const CartHeader = ({
+  product, addToCart, removeFromCart, ...props
+}) => (
+  <section key={product?.id} className="cart__products__section" {...props}>
     <img src={product?.imageURL} alt={product?.name} />
     <div className="cart__products__section__description">
       <h4>{product?.name}</h4>

@@ -43,6 +43,7 @@ const CheckoutCart = () => {
           <div className="cart__products">
             {Object.values(products).map((product) => (
               <CartProductSection
+                key={product.id}
                 product={product}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
