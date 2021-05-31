@@ -1,0 +1,142 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+@mixin clamp($lines) {
+  -webkit-line-clamp: $lines;
+  -moz-line-clamp: $lines;
+  -ms-line-clamp: $lines;
+  line-clamp: $lines;
+}
+
+.product-card {
+  width: 100%;
+  padding: 1rem;
+  &__name {
+    height: fit-content;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    @include clamp(3);
+    overflow: hidden;
+  }
+  &__details {
+    border-bottom: 1px dashed $color-grey;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 14rem;
+    &__image {
+      order: 1;
+      width: 50%;
+      padding: 0.2rem;
+      height: 100%;
+      object-fit: contain;
+    }
+    &__description {
+      order: 2;
+      width: 50%;
+      border-radius: 0.1rem;
+      word-break: break-word;
+      background-color: $color-light-grey;
+      height: 50%;
+      &__content {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+        box-orient: vertical;
+        @include clamp(6);
+        overflow: hidden;
+        font-size: 0.7rem;
+        margin: 0.5rem;
+      }
+    }
+    &__button {
+      width: 50%;
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+    &--desktop {
+      order: 3;
+      display: none;
+    }
+    &--mobile {
+      order: 3;
+      display: block;
+    }
+  }
+  @media (min-width: $screen-mid) {
+    width: 100%;
+    height: 24rem;
+    border-bottom: 1px dashed $color-grey;
+    box-shadow: 4px 0px 10px 0px $color-light-grey;
+    &__name {
+      height: 3rem;
+    }
+    &__details {
+      flex-direction: row;
+      border-bottom: none;
+      height: 12rem;
+      &__description {
+        height: 100%;
+        &__content {
+          font-size: 1rem;
+          @include clamp(8);
+        }
+      }
+      &__button {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+  @media (min-width: $screen-large) {
+    width: 100%;
+    height: 31rem;
+    border-bottom: 1px dashed $color-grey;
+    &__name {
+      @include clamp(2);
+    }
+    &__details {
+      border-bottom: none;
+      height: 15rem;
+      &__description {
+        width: 100%;
+        height: 5rem;
+        &__content {
+          font-size: 0.8rem;
+          @include clamp(4);
+        }
+      }
+      &__price {
+        font-size: 0.8rem;
+        font-weight: 500;
+        flex-basis: 50%;
+      }
+      &__image {
+        width: 100%;
+        height: fit-content;
+      }
+      &__button {
+        width: 100%;
+        flex-basis: 50%;
+        padding: 0.5rem;
+        margin-top: 0;
+      }
+      &--desktop {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      &--mobile {
+        display: none;
+      }
+    }
+  }
+  @media (min-width: $screen-x-large) {
+    height: 27rem;
+  }
+}

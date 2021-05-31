@@ -2,19 +2,23 @@ export default {
   header: {
     home: 'Home',
     products: 'Products',
-    login: 'Login',
+    signIn: 'Sign In',
     register: 'Register',
-    carousel: {
-      next: 'NEXT',
-      previous: 'PREV',
+    cart: {
+      items: 'items',
+      item: 'item',
     },
+  },
+  carousel: {
+    next: 'NEXT',
+    previous: 'PREV',
   },
   footer: {
     copyright: 'Copyright',
     message: '2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd',
   },
-  login: {
-    text: 'Login',
+  signIn: {
+    text: 'Sign In',
     description: 'Get access to your Orders, Wishlist and Recommendations.',
     email: 'Email',
     password: 'Password',
@@ -27,5 +31,8 @@ export default {
     email: 'Email',
     password: 'Password',
     confirmPassword: 'Confirm Password',
+  },
+  products: {
+    buyNow: 'Buy Now',
   },
 };

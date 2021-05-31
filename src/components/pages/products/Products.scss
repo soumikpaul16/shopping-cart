@@ -1,0 +1,39 @@
+@import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/colors";
+
+.products {
+  &__container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-column-gap: 0.5rem;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(1, auto);
+  }
+
+  @media (min-width: $screen-mid) {
+    display: flex;
+    &__container {
+      padding-top: 0;
+      width: 75%;
+      grid-template-columns: repeat(2, 49%);
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+  @media (min-width: $screen-large) {
+    width: 100%;
+    &__container {
+      width: 72%;
+      grid-template-columns: repeat(3, 33%);
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+  @media (min-width: $screen-x-large) {
+    width: $screen-x-large;
+    margin: auto;
+    &__container {
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+}

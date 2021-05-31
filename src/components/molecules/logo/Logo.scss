@@ -1,7 +1,14 @@
+@import "../../../assets/styles/variables/breakpoints";
 .logo {
   &__image {
     max-width: 100%;
     max-height: 100%;
     padding: 0.3rem 0 0.3rem 0;
+  }
+  @media (min-width: $screen-mid) {
+    width: 10rem;
+  }
+  @media (min-width: $screen-large) {
+    width: auto;
   }
 }

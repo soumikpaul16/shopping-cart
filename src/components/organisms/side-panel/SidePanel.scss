@@ -1,0 +1,34 @@
+@import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/colors";
+
+.side-panel {
+  &__links {
+    display: none;
+    min-height: 85vh;
+  }
+  @media (min-width: $screen-mid) {
+    &__links {
+      display: block;
+      width: 25%;
+      background-color: $color-light-grey;
+      &--fixed {
+        position: fixed;
+        width: inherit;
+      }
+      &__item {
+        display: block;
+        padding: 1rem;
+        color: $color-grey;
+        border-bottom: solid 1px $color-translucent-grey;
+        cursor: pointer;
+      }
+    }
+  }
+  @media (min-width: $screen-x-large) {
+    &__links {
+      &--fixed {
+        width: 256px;
+      }
+    }
+  }
+}

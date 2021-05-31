@@ -6,7 +6,7 @@ import {
 
 const AppRouter = () => (
   <Switch>
-    <Route path="/login" exact render={(props) => <SignIn {...props} />} />
+    <Route path="/signIn" exact render={(props) => <SignIn {...props} />} />
     <Route path="/register" exact render={(props) => <Register {...props} />} />
     <Route path="/products" render={(props) => <Products {...props} />} />
     <Route path="/" render={(props) => <Home {...props} />} />

@@ -1,0 +1,37 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+
+.cart {
+  background-color: $color-light-grey;
+  flex-basis: 100%;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  &__image {
+    fill: $color-red;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  &__text {
+    font-size: 0.8rem;
+    color: $color-black;
+    font-weight: 500;
+  }
+  &:active {
+    transform: none;
+  }
+}
+
+@media (min-width: $screen-mid) {
+  .cart {
+    flex-basis: 60%;
+    width: auto;
+    &__text {
+      font-size: 0.9rem;
+      color: $color-black;
+      font-weight: 500;
+    }
+  }
+}
