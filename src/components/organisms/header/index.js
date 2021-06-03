@@ -6,10 +6,15 @@ import './Header.scss';
 import metadata from './metadata.json';
 import { GET_CART } from '../../../apollo/queries';
 import mutations from '../../../apollo/mutations';
+import { Drawer } from '../../atoms';
+import { CheckoutCart } from '../../pages';
+import { useMediaQuery } from '../../../utils';
 
 const Header = () => {
   const { data } = useQuery(GET_CART);
+  const { count, isCartOpen } = data?.cart;
   const { handleCart } = mutations;
+  const isLaptop = useMediaQuery('(min-width: 769px)');
 
   return (
     <header className="header">
@@ -27,11 +32,17 @@ const Header = () => {
             navElements={metadata?.headerNavigations?.authNavs}
           />
           <CartButton
-            cartCount={data ? data.cart.count : 0}
+            cartCount={count}
             handleCartClick={() => handleCart(true)}
           />
         </div>
       </div>
+      {/* its for CheckoutCart Drawer */}
+      {isCartOpen && (
+        <Drawer isOpen={isCartOpen} overlay={isLaptop}>
+          <CheckoutCart />
+        </Drawer>
+      )}
     </header>
   );
 };

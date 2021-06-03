@@ -1,24 +1,40 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import { useFocusTrap } from '../../../utils';
 import './Drawer.scss';
 
 const modalNode = document.getElementById('modal');
 
 const Drawer = ({
   children, isOpen, overlay, className,
-}) => (isOpen === true
-  ? ReactDOM.createPortal(
-    <div className="drawer">
-      {overlay ? <div className="drawer__overlay" /> : null}
-      <div className={classNames(className, 'drawer__content')}>
-        {children}
-      </div>
-    </div>,
-    modalNode,
-  )
-  : null);
+}) => {
+  const ref = useRef(null);
+  const setElRef = useFocusTrap(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      setElRef(ref);
+    } else {
+      document.body.style.overflow = 'unset';
+      setElRef(null);
+    }
+  }, [isOpen]);
+
+  return isOpen === true
+    ? createPortal(
+      <div className="drawer" ref={ref}>
+        {overlay ? <div className="drawer__overlay" /> : null}
+        <div className={classNames(className, 'drawer__content')}>
+          {children}
+        </div>
+      </div>,
+      modalNode,
+    )
+    : null;
+};
 
 Drawer.propTypes = {
   children: PropTypes.element,
