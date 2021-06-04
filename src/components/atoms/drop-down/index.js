@@ -1,8 +1,8 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import Button from '../button';
 import './DropDown.scss';
-import classNames from 'classnames';
-import { Button } from '..';
 
 const DropDown = ({
   selectedValue, handleChange, items, onlyMobile,

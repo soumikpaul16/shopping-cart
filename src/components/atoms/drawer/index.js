@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useFocusTrap } from '../../../utils';
+import { focusFirstInteractiveEl, useFocusTrap } from '../../../utils';
 import './Drawer.scss';
 
 const modalNode = document.getElementById('modal');
@@ -16,6 +16,7 @@ const Drawer = ({
   useEffect(() => {
     if (isOpen) {
       setElRef(ref);
+      focusFirstInteractiveEl(ref);
       document.body.style.overflow = 'hidden';
     } else {
       setElRef(null);

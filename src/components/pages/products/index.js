@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
+import { focusFirstInteractiveEl } from '../../../utils';
 import mutations from '../../../apollo/mutations';
 import { GET_CATEGORIES, GET_PRODUCTS } from '../../../apollo/queries';
 import useMediaQuery from '../../../utils/useMediaQuery';
@@ -15,6 +16,7 @@ const Products = () => {
   const match = useRouteMatch('/products/:categoryId');
   const history = useHistory();
   const location = useLocation();
+  const ref = useRef(null);
   const notMobile = useMediaQuery('(min-width: 481px)'); // for ipad and laptops
 
   // apollo client
@@ -65,6 +67,7 @@ const Products = () => {
         if (filteredProductArray.length > 0) {
           setFilteredProducts(filteredProductArray);
           setSelectedCategory(categoryId);
+          focusFirstInteractiveEl(ref);
         } else {
           viewAllProducts();
         }
@@ -94,7 +97,7 @@ const Products = () => {
           onlyMobile
         />
       )}
-      <div className="products__container">
+      <div className="products__container" ref={ref}>
         {filteredProducts.map((product) => (
           <ProductCard
             key={product.sku}
