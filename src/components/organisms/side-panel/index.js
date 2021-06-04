@@ -5,17 +5,15 @@ import './SidePanel.scss';
 
 const SidePanel = ({ links }) => (
   <aside className="side-panel__links">
-    <div className="side-panel__links--fixed">
+    <ul className="side-panel__links__list side-panel__links--fixed">
       {links.map((link) => (
-        <RouteLink
-          key={link.id}
-          className="side-panel__links__item"
-          path={link.path}
-        >
-          {link.name}
-        </RouteLink>
+        <li key={link.id}>
+          <RouteLink className="side-panel__links__item" path={link.path}>
+            {link.name}
+          </RouteLink>
+        </li>
       ))}
-    </div>
+    </ul>
   </aside>
 );
 

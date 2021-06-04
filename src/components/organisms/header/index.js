@@ -33,16 +33,14 @@ const Header = () => {
           />
           <CartButton
             cartCount={count}
-            handleCartClick={() => handleCart(true)}
+            handleCartClick={() => handleCart(!isCartOpen)}
           />
         </div>
       </div>
       {/* its for CheckoutCart Drawer */}
-      {isCartOpen && (
-        <Drawer isOpen={isCartOpen} overlay={isLaptop}>
-          <CheckoutCart />
-        </Drawer>
-      )}
+      <Drawer isOpen={isCartOpen} overlay={isLaptop}>
+        <CheckoutCart />
+      </Drawer>
     </header>
   );
 };

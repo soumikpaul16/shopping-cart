@@ -15,11 +15,11 @@ const Drawer = ({
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
       setElRef(ref);
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
       setElRef(null);
+      document.body.style.overflow = 'unset';
     }
   }, [isOpen]);
 

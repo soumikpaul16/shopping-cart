@@ -4,11 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  // resolve: {
-  //   alias: {
-  //     src: path.resolve(__dirname, 'src/'),
-  //   },
-  // },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'index_bundle.js',
