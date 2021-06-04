@@ -35,8 +35,8 @@ const CartHeader = ({
         {!isCartEmpty && (
           <div>
             <FormattedMessage id={cart?.currency} />
-            {' '}
             {totalCost}
+            <i className="cart__footer--right-arrow" />
           </div>
         )}
       </Button>

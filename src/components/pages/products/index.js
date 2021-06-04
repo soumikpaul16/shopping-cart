@@ -88,7 +88,7 @@ const Products = () => {
         />
       ) : (
         <DropDown
-          options={[...categories, { id: '', name: 'All Products' }]}
+          items={[...categories, { id: '', name: 'All Products' }]}
           selectedValue={selectedCategory}
           handleChange={handleChange}
           onlyMobile

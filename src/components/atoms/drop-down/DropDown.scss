@@ -7,16 +7,42 @@
     width: 100%;
   }
 
-  &__option {
+  &__menu-item {
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      border-bottom: 1px solid $color-black;
+    }
+  }
+
+  &__menu{
+    margin: 0;
+    padding: 0;
+  }
+
+  &__button {
     outline: none;
-    width: inherit;
+    width: 100%;
     padding: 1rem;
     background-color: $color-red;
-    border: none;
     color: $color-white;
     font-size: 0.85rem;
     font-weight: 500;
-    cursor: pointer;
+    border-radius: 0;
+    border-bottom: 1px solid $color-white;
+    display: flex;
+    justify-content: space-between;
+    &--arrow-down {
+      border: solid $color-white;
+      border-width: 0 0.1rem 0.1rem 0;
+      display: inline-block;
+      padding: 0.3rem;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+    &:active {
+      transform: none;
+    }
   }
   @media (min-width: $screen-mid) {
     &__container {
