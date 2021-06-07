@@ -28,6 +28,7 @@ const Form = ({ formContent, formElements, onSubmit }) => {
         break;
       case elementId === 'password' && value === formValues['confirm-password']: // extra check when both passwords match
         formErrors['confirm-password'] = '';
+        formErrors.password = '';
         break;
       default:
         formErrors[elementId] = '';
