@@ -36,6 +36,9 @@ $form-button-margin-top: 1.5rem;
     width: 100%;
     padding: $form-button-padding;
   }
+  &__button:disabled {
+   background-color: $color-light-red;
+  }
 }
 @media (min-width: $screen-mid) {
   .form {

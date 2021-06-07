@@ -1,7 +1,8 @@
 @import "../../../assets/styles/variables/colors";
 
 $border-strength-bottom: 0.1rem;
-$input-margin: 1rem;
+$error-height: 1rem;
+$error-font-size: 0.8rem;
 $box-font-size: 0.7rem;
 $box-padding: 0.5rem;
 
@@ -9,8 +10,12 @@ $box-padding: 0.5rem;
   &__wrap {
     display: flex;
     flex-flow: column-reverse;
-    margin-bottom: $input-margin;
     width: 100%;
+  }
+  &__error {
+    color: $color-dark-red;
+    height: $error-height;
+    font-size: $error-font-size;
   }
   &__label,
   &__box {
