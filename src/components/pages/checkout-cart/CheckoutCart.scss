@@ -1,5 +1,12 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+$cart-width-laptop: 25rem;
+$cart-right-space-laptop: 10%;
+$cart-lowest-price-image-width: 7rem;
+$cart-lowest-price-image-margin: 1rem;
+$cart-lowest-price-wrap-margin-padding: 0.5rem;
 
 .cart {
   width: 100%;
@@ -11,7 +18,7 @@
   &__empty {
     display: flex;
     justify-content: space-around;
-    height: calc(100vh - 14rem);
+    height: calc($full-viewport-height - 14rem);
     align-items: center;
     &__content {
       display: flex;
@@ -24,14 +31,14 @@
     }
   }
   &__lowest-price-wrap {
-    margin: 0.5rem;
-    padding: 0.5rem;
+    margin: $cart-lowest-price-image-margin-padding;
+    padding: $cart-lowest-price-image-margin-padding;
     background-color: $color-white;
     display: flex;
     align-items: center;
     img {
-      width: 7rem;
-      margin-right: 1rem;
+      width: $cart-lowest-price-image-width;
+      margin-right: $cart-lowest-price-image-margin;
     }
   }
 }
@@ -39,8 +46,8 @@
 @media (min-width: $screen-large) {
   .cart {
     position: fixed;
-    width: 25rem;
+    width: $cart-width-laptop;
     z-index: 2;
-    right: 10%;
+    right: $cart-right-space-laptop;
   }
 }
