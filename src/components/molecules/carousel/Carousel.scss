@@ -1,9 +1,17 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
 
+$carousel-height-mobile: 15rem;
+$carousel-height-tablet: 20rem;
+$carousel-height-laptop: 25rem;
+$nav-bottom-height: 3rem;
+$left-right-button-padding: 0.5rem;
+$indicator-width-height: 0.3rem;
+$indicator-margin: 1rem;
+
 .carousel {
   position: relative;
-  height: 15rem;
+  height: $carousel-height-mobile;
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 60px 55px -80px $color-grey;
@@ -35,16 +43,16 @@
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 3rem;
+    bottom: $nav-bottom-height;
   }
 
   &__indicator {
     border: 0;
     border-radius: 50%;
-    width: 0.3rem;
-    height: 0.3rem;
+    width: $indicator_width_height;
+    height: $indicator_width_height;
     background: $color-translucent-grey;
-    margin: 0 1rem;
+    margin: 0 $indicator-margin;
     padding: 0;
 
     &--current-slide {
@@ -59,7 +67,7 @@
 
 @media (min-width: $screen-mid) {
   .carousel {
-    height: 20rem;
+    height: $carousel-height-tablet;
     &__button {
       display: block;
       position: absolute;
@@ -68,7 +76,7 @@
       background-color: $color-translucent-grey;
       color: $color-white;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: $left-right-button-padding;
       &:active {
         transform: translateY(-50%);
       }
@@ -88,7 +96,7 @@
 
 @media (min-width: $screen-x-large) {
   .carousel {
-    width: 1023px;
-    height: 25rem;
+    width: $screen-x-large;
+    height: $carousel-height-laptop;
   }
 }

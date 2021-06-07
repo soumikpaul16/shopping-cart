@@ -1,14 +1,27 @@
 @import "../../../assets/styles/variables/breakpoints";
+
+$logo-padding-top-bottom: 0.3rem;
+$logo-width-small: 8rem;
+$logo-width-mid: 10rem;
+$logo-margin-mid: 2rem;
+$logo-width-x-large: 12rem;
+$logo-margin-x-large: 4rem;
+
 .logo {
+  width: $logo-width-small;
   &__image {
     max-width: 100%;
     max-height: 100%;
-    padding: 0.3rem 0 0.3rem 0;
+    padding: $logo-padding-top-bottom 0 $logo-padding-top-bottom 0;
   }
   @media (min-width: $screen-mid) {
-    width: 10rem;
+    width: $logo-width-mid;
   }
   @media (min-width: $screen-large) {
-    width: auto;
+    margin-right: $logo-margin-mid;
+  }
+  @media (min-width: $screen-x-large) {
+    width: $logo-width-x-large;
+    margin-right: $logo-margin-x-large;
   }
 }

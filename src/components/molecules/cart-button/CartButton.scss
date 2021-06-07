@@ -1,22 +1,28 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
 
+$cart-image-width-height: 1.8rem;
+$cart-text-size-small: 0.8rem;
+$cart-text-size-mid: 0.9rem;
+$cart-padding: 0.8rem;
+$cart-width: 7rem;
+
 .header {
   &__cart {
     background-color: $color-light-grey;
     flex-basis: 100%;
-    padding: 0.8rem;
+    padding: $cart-padding;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 7rem;
+    width: $cart-width;
     &__image {
       fill: $color-red;
-      width: 1.8rem;
-      height: 1.8rem;
+      width: $cart-image-width-height;
+      height: $cart-image-width-height;
     }
     &__text {
-      font-size: 0.8rem;
+      font-size: $cart-text-size-small;
       color: $color-black;
       font-weight: 500;
     }
@@ -32,7 +38,7 @@
       flex-basis: 60%;
       width: auto;
       &__text {
-        font-size: 0.9rem;
+        font-size: $cart-text-size-mid;
         color: $color-black;
         font-weight: 500;
       }

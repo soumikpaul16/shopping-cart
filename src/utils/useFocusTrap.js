@@ -28,7 +28,6 @@ const useFocusTrap = (eRef) => {
 
   useEffect(() => {
     elRef?.current?.addEventListener('keydown', handleFocus);
-
     return () => {
       elRef?.current?.removeEventListener('keydown', handleFocus);
     };
