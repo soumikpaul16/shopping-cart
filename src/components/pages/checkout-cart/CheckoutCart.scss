@@ -31,8 +31,8 @@ $cart-lowest-price-wrap-margin-padding: 0.5rem;
     }
   }
   &__lowest-price-wrap {
-    margin: $cart-lowest-price-image-margin-padding;
-    padding: $cart-lowest-price-image-margin-padding;
+    margin: $cart-lowest-price-wrap-margin-padding;
+    padding: $cart-lowest-price-wrap-margin-padding;
     background-color: $color-white;
     display: flex;
     align-items: center;
