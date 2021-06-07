@@ -12,6 +12,7 @@ $cart-cross-position-right: 1rem;
     background-color: $color-white;
     font-weight: 400;
     position: relative;
+    border-top: solid 1px $color-light-grey;
     &__empty {
       background-color: $color-black;
       color: $color-white;
@@ -29,6 +30,7 @@ $cart-cross-position-right: 1rem;
 @media (min-width: $screen-large) {
   .cart {
     &__header {
+      border: none;
       margin-top: 0;
       background-color: $color-black;
       color: $color-white;
