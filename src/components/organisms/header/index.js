@@ -1,20 +1,40 @@
 import { useQuery } from '@apollo/client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import mutations from '../../../apollo/mutations';
+import { GET_CART } from '../../../apollo/queries';
 import logoImage from '../../../assets/images/logo.png';
-import { CartButton, Logo, Nav } from '../../molecules';
+import { useMediaQuery } from '../../../utils';
+import { Drawer } from '../../atoms';
+import {
+  CartButton, HamBurger, Logo, Nav,
+} from '../../molecules';
+import { CheckoutCart } from '../../pages';
 import './Header.scss';
 import metadata from './metadata.json';
-import { GET_CART } from '../../../apollo/queries';
-import mutations from '../../../apollo/mutations';
-import { Drawer } from '../../atoms';
-import { CheckoutCart } from '../../pages';
-import { useMediaQuery } from '../../../utils';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data } = useQuery(GET_CART);
   const { count, isCartOpen } = data?.cart;
   const { handleCart } = mutations;
+  const location = useLocation();
+  const history = useHistory();
+
   const isLaptop = useMediaQuery('(min-width: 769px)');
+  const isMobile = useMediaQuery('(max-width: 481px)');
+  const handleMenuBar = (isOpen, path = null) => {
+    setIsMenuOpen(isOpen);
+    if (path) history.push(path);
+  };
+
+  useEffect(() => {
+    let isCancelled = false;
+    if (!isCancelled) handleMenuBar(false);
+    return () => {
+      isCancelled = true;
+    };
+  }, [location]);
 
   return (
     <header className="header">
@@ -37,6 +57,17 @@ const Header = () => {
           />
         </div>
       </div>
+      {/* form mobile menubar */}
+      {isMobile && (
+        <HamBurger
+          isMenuOpen={isMenuOpen}
+          handleMenuBar={handleMenuBar}
+          items={[
+            ...metadata?.headerNavigations?.mainNavs,
+            ...metadata?.headerNavigations?.authNavs,
+          ]}
+        />
+      )}
       {/* its for CheckoutCart Drawer */}
       <Drawer isOpen={isCartOpen} overlay={isLaptop}>
         <CheckoutCart />

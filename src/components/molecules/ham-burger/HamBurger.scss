@@ -1,0 +1,78 @@
+@import "../../../assets/styles/variables/colors";
+
+.header {
+  &__mobile-menubar {
+    width: 0;
+    height: 0;
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    transition: width 0.5s, height 0.5s;
+    background-color: $color-white;
+    box-shadow: 0 0 15px 3px $color-dark-grey;
+    display: flex;
+    &--open {
+      width: 90vw;
+      height: 4rem;
+      padding: 0.2rem;
+    }
+  }
+  &__mobile-menuitem {
+    flex-basis: 100%;
+    color: $color-white;
+    opacity: 0;
+    transition: opacity 1s;
+    margin: 0.1rem;
+    &--open {
+      opacity: 1;
+    }
+  }
+  &__mobile-hamburger {
+    position: fixed;
+    bottom: 5%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 0 $color-white;
+    right: 5%;
+    width: 4rem;
+    height: 4rem;
+    &__icon {
+      width: 2rem;
+      display: block;
+      height: 0.1rem;
+      background-color: $color-white;
+      margin: 0.4rem auto;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
+      &--open:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 1.5rem;
+        left: 0.9rem;
+        position: absolute;
+      }
+
+      &--open:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      &--open:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 0.9rem;
+        top: 1.5rem;
+      }
+    }
+  }
+}

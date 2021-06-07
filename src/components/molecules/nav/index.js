@@ -6,7 +6,6 @@ import { RouteLink } from '../../atoms';
 
 const Nav = ({ className, navElements }) => (
   <nav className={className}>
-    {/* todo replace span with link as an atom to pass the page path */}
     {navElements.map((element) => (
       <RouteLink
         path={element.path}
