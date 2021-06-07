@@ -1,5 +1,12 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+
+$border-strength: 0.1rem;
+$button-font-size: 0.85rem;
+$button-padding: 1rem;
+$arrow-padding: 0.3rem;
 
 .select {
   &__container {
@@ -11,11 +18,11 @@
     &:hover {
       background-color: $color-white;
       color: $color-black;
-      border-bottom: 1px solid $color-black;
+      border-bottom: $border-strength solid $color-black;
     }
   }
 
-  &__menu{
+  &__menu {
     margin: 0;
     padding: 0;
   }
@@ -24,22 +31,22 @@
     outline: none;
     width: 100%;
     margin: 0;
-    padding: 1rem;
+    padding: $button-padding;
     background-color: $color-red;
     color: $color-white;
-    font-size: 0.85rem;
+    font-size: $button-font-size;
     font-weight: 500;
     border-radius: 0;
-    border-bottom: 1px solid $color-white;
+    border-bottom: $border-strength solid $color-white;
     display: flex;
     justify-content: space-between;
     &--arrow-down {
       border: solid $color-white;
-      border-width: 0 0.1rem 0.1rem 0;
+      border-width: 0 $border-strength $border-strength 0;
       display: inline-block;
-      padding: 0.3rem;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
+      padding: $arrow-padding;
+      transform: $transform-45deg;
+      -webkit-transform: $transform-45deg;
     }
     &:active {
       transform: none;

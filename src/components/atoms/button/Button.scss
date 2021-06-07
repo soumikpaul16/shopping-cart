@@ -1,4 +1,5 @@
 @import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/spaces";
 
 .button {
   border: none;
@@ -6,8 +7,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 2px;
-  font-size: 1rem;
+  border-radius: $button-border-radius;
   background-color: $color-red;
   &:active {
     transform: translateY(0.5px);
