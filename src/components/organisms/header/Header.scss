@@ -1,5 +1,11 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+$header-nav-font-size: 1rem;
+$header-auth-font-size: 0.8rem;
+$header-margin-1: 1rem;
+$header-margin-2: 2rem;
 
 .header {
   width: 100%;
@@ -11,7 +17,7 @@
   align-items: center;
   &__sub__container {
     width: 100%;
-    height: 4rem;
+    height: $header-hight-mobile;
     display: flex;
     justify-content: space-between;
   }
@@ -38,31 +44,31 @@
 @media (min-width: $screen-mid) {
   .header {
     &__sub__container {
-      height: 5rem;
+      height: $header-hight-tablet;
     }
     &__nav__items {
       display: block;
-      font-size: 1rem;
+      font-size: $header-nav-font-size;
       color: $color-dark-grey;
       font-weight: 500;
       align-self: flex-end;
-      margin-bottom: 1rem;
+      margin-bottom: $header-margin-1;
       &__link {
-        margin-left: 1rem;
+        margin-left: $header-margin-1;
         cursor: pointer;
       }
     }
     &__auth__wrapper {
       display: block;
-      font-size: 0.8rem;
+      font-size: $header-auth-font-size;
       color: $color-dark-grey;
       font-weight: 500;
-      margin-left: 2rem;
+      margin-left: $header-margin-2;
       &__link {
         cursor: pointer;
       }
       &--space-right {
-        margin-right: 1rem;
+        margin-right: $header-margin-1;
       }
     }
   }
@@ -71,12 +77,12 @@
   .header {
     &__nav__items {
       &__link {
-        margin-left: 2rem;
+        margin-left: $header-margin-2;
       }
     }
     &__sub__container {
       width: $screen-x-large;
-      height: 6rem;
+      height: $header-hight-laptop;
       margin: auto;
     }
   }

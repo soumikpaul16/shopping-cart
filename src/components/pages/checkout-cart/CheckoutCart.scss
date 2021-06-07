@@ -18,7 +18,7 @@ $cart-lowest-price-wrap-margin-padding: 0.5rem;
   &__empty {
     display: flex;
     justify-content: space-around;
-    height: calc($full-viewport-height - 14rem);
+    height: calc(#{$full-viewport-height} - 14rem);
     align-items: center;
     &__content {
       display: flex;

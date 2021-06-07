@@ -1,10 +1,14 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
 
+$cart-header-font-size: 0.8rem;
+$cart-header-padding: 1rem;
+$cart-cross-position-right: 1rem;
+
 .cart {
   &__header {
-    font-size: 0.8rem;
-    padding: 1rem 1rem;
+    font-size: $cart-header-font-size;
+    padding: $cart-header-padding;
     background-color: $color-white;
     font-weight: 400;
     position: relative;
@@ -16,7 +20,7 @@
       font-weight: normal;
       visibility: hidden;
       position: absolute;
-      right: 1rem;
+      right: $cart-cross-position-right;
       cursor: pointer;
       background-color: transparent;
     }

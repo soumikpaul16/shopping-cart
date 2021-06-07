@@ -1,9 +1,19 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+$cart-footer-width-laptop: 25rem;
+$cart-footer-margin-top: 0.5rem;
+
+$cart-footer-content-font-size: 0.8rem;
+$cart-footer-content-margin-top: 1rem;
+$cart-footer-button-margin : 0.8rem;
+$cart-footer-button-padding : 1rem;
+
 
 .cart {
   &__footer {
-    margin-top: 0.5rem;
+    margin-top: $cart-footer-margin-top;
     text-align: center;
     position: fixed;
     box-shadow: 0px -5px 5px $color-light-grey;
@@ -11,28 +21,28 @@
     width: 100%;
     background-color: $color-white;
     &--right-arrow {
-      border: solid #ffffff;
+      border: solid $color-white;
       border-width: 0 0.1rem 0.1rem 0;
       display: inline-block;
       padding: 0.3rem;
       margin-left: 0.2rem;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
+      transform: $transform-neg-45deg;
+      -webkit-transform: $transform-neg-45deg;
     }
     &__content {
-      font-size: 0.8rem;
-      margin-top: 1rem;
+      font-size: $cart-footer-content-font-size;
+      margin-top: $cart-footer-content-margin-top;
       font-weight: 500;
     }
     &__button {
       background-color: $color-red;
-      border-radius: 0.1rem;
-      margin: 0.8rem auto;
+      border-radius: $button-border-radius;
+      margin: $cart-footer-button-margin auto;
       width: 95%;
       border: 0;
       display: flex;
       justify-content: space-between;
-      padding: 1rem;
+      padding: $cart-footer-button-padding;
       &--center {
         justify-content: space-around;
       }
@@ -50,7 +60,7 @@
       }
     }
     &__footer {
-      width: 25rem;
+      width: $cart-footer-width-laptop;
     }
   }
 }

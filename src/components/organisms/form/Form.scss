@@ -1,39 +1,51 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
 
+$form-margin: 1rem;
+
+$form-title-margin: 0.5rem;
+$form-horizontal-padding-mid: 2rem;
+$form-horizontal-padding-large: 3rem;
+
+$form-vertical-margin-mid: 2rem;
+
+$form-heading-font-size: 2rem;
+$form-desc-font-size: 0.8rem;
+$form-desc-margin-top: 1rem;
+$form-button-padding: 0.5rem;
+$form-button-margin-top: 1.5rem;
+
 .form {
-  margin: 1rem;
+  margin: $form-margin;
   display: flex;
   flex-direction: column;
   color: $color-dark-grey;
   &__title {
     letter-spacing: 0;
     h1 {
-      font-size: 2rem;
+      font-size: $form-heading-font-size;
     }
     p {
-      margin-top: 1rem;
-      font-size: 0.8rem;
+      margin-top: $form-desc-margin-top;
+      font-size: $form-desc-font-size;
       font-weight: 500;
     }
   }
   &__button {
-    margin-top: 1.5rem;
+    margin-top: $form-button-margin-top;
     width: 100%;
-    padding: 0.5rem;
+    padding: $form-button-padding;
   }
 }
 @media (min-width: $screen-mid) {
   .form {
     width: 100%;
-    padding: 0 2rem;
-    margin: auto;
-    margin-top: 2rem;
+    padding: 0 $form-horizontal-padding-mid;
+    margin: $form-vertical-margin-mid auto;
     flex-direction: row;
-    margin-bottom: 2rem;
     &__title {
       flex-grow: 1;
-      margin: 0.5rem;
+      margin: $form-title-margin;
       flex-basis: 20%;
     }
     &__fields {
@@ -44,6 +56,6 @@
 @media (min-width: $screen-large) {
   .form {
     width: $screen-large;
-    padding: 0 3rem;
+    padding: 0 $form-horizontal-padding-large;
   }
 }
