@@ -27,6 +27,7 @@ const Carousel = ({ bannersInfo }) => {
 
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(0);
   };
 
   const handleTouchMove = (e) => {
@@ -34,11 +35,11 @@ const Carousel = ({ bannersInfo }) => {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 15) {
+    if (touchEnd && touchStart - touchEnd > 15) {
       handleSlide(currentSlide === bannersInfo.length ? 1 : currentSlide + 1);
     }
 
-    if (touchStart - touchEnd < -15) {
+    if (touchEnd && touchStart - touchEnd < -15) {
       handleSlide(currentSlide === 1 ? bannersInfo.length : currentSlide - 1);
     }
   };
