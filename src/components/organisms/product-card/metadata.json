@@ -1,7 +1,5 @@
 {
   "productCard": {
-    "buyNow": {
-      "id": "products.buyNow"
-    }
+    "buyNow": "products.buyNow"
   }
 }

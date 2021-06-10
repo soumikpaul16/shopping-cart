@@ -1,10 +1,6 @@
 {
   "cart": {
-    "items": {
-      "id": "header.cart.items"
-    },
-    "item": {
-      "id": "header.cart.item"
-    }
+    "items": "header.cart.items",
+    "item": "header.cart.item"
   }
 }

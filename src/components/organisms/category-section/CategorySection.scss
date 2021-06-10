@@ -1,18 +1,21 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
 
+$category-padding: 1rem;
+$category-image-horizontal-padding: 4rem;
+
 .category {
   flex: 1;
   display: flex;
   align-items: center;
   box-shadow: 0 60px 55px -80px $color-grey;
-  padding: 1em;
+  padding: $category-padding;
   &--reverse {
     flex-direction: row-reverse;
   }
   &__image__wrapper {
     flex: 2;
-    padding: 4rem 0 4em 0;
+    padding: $category-image-horizontal-padding 0;
     img {
       width: 100%;
     }
@@ -24,8 +27,6 @@
     width: $screen-x-large;
     margin: auto;
     &__image__wrapper {
-      flex: 2;
-      padding: 4rem 0 4em 0;
       img {
         width: 70%;
       }

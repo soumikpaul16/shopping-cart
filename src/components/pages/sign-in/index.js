@@ -3,6 +3,18 @@ import { FormattedMessage } from 'react-intl';
 import { Form } from '../../organisms';
 import metadata from './metadata.json';
 
+const regex = {
+  email: {
+    value:
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    message: 'Invalid email!',
+  },
+  password: {
+    value: /^[a-zA-Z0-9@]+$/,
+    message: 'Use @ or alphanumeric characters.',
+  },
+};
+
 const SignIn = () => {
   const handleSubmit = (values) => {
     console.log('values', values);
@@ -23,6 +35,7 @@ const SignIn = () => {
       id,
       placeholder,
       type,
+      regex: regex[id],
       label: <FormattedMessage id={label} />,
     }),
   );

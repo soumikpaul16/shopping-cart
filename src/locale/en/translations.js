@@ -35,4 +35,22 @@ export default {
   products: {
     buyNow: 'Buy Now',
   },
+  cart: {
+    myCart: 'My Cart',
+    items: 'items',
+    item: 'item',
+    emptyCart: {
+      header: 'No items in your cart',
+      content: 'Your favorite items are just a click away',
+    },
+    cheaperAd: 'You wont find it cheaper anywhere',
+    footer: {
+      paymentAd: 'Promo code can be applied on the payment page',
+      button: {
+        empty: 'Start Shopping',
+        notEmpty: 'Proceed to Checkout',
+      },
+    },
+    currency: 'Rs.',
+  },
 };

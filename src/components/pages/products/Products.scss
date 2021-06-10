@@ -1,12 +1,17 @@
 @import "../../../assets/styles/variables/breakpoints";
 @import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/spaces";
+
+$product-grid-gap: 0.5rem;
+$product-container-width-mid: 75%;
+$product-container-width-large: 72%;
 
 .products {
   &__container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: $category-dropdown-height;
+    padding-bottom: $footer-height;
     display: grid;
-    grid-column-gap: 0.5rem;
+    grid-column-gap: $product-grid-gap;
     grid-template-columns: repeat(1, 100%);
     grid-template-rows: repeat(1, auto);
   }
@@ -15,7 +20,7 @@
     display: flex;
     &__container {
       padding-top: 0;
-      width: 75%;
+      width: $product-container-width-mid;
       grid-template-columns: repeat(2, 49%);
       grid-template-rows: repeat(2, auto);
     }
@@ -23,7 +28,7 @@
   @media (min-width: $screen-large) {
     width: 100%;
     &__container {
-      width: 72%;
+      width: $product-container-width-large;
       grid-template-columns: repeat(3, 33%);
       grid-template-rows: repeat(3, auto);
     }

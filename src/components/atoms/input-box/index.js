@@ -3,10 +3,10 @@ import React from 'react';
 import './InputBox.scss';
 
 const InputBox = ({
-  label, type, id, onChange, value, ...props
+  label, type, id, onChange, value, error, ...props
 }) => (
   <div className="input__wrap">
-    {/* error field will be added later */}
+    <span className="input__error">{error}</span>
     <input
       className="input__box"
       type={type}
@@ -28,6 +28,7 @@ InputBox.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
   value: PropTypes.string,
+  error: PropTypes.string,
   onChange: PropTypes.func,
 };
 InputBox.defaultProps = {
@@ -35,6 +36,7 @@ InputBox.defaultProps = {
   type: '',
   value: '',
   id: '',
+  error: '',
   onChange: () => {},
 };
 

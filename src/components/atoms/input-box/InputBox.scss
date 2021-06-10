@@ -1,11 +1,21 @@
 @import "../../../assets/styles/variables/colors";
 
+$border-strength-bottom: 0.1rem;
+$error-height: 1rem;
+$error-font-size: 0.8rem;
+$box-font-size: 0.7rem;
+$box-padding: 0.5rem;
+
 .input {
   &__wrap {
     display: flex;
     flex-flow: column-reverse;
-    margin-bottom: 1rem;
     width: 100%;
+  }
+  &__error {
+    color: $color-dark-red;
+    height: $error-height;
+    font-size: $error-font-size;
   }
   &__label,
   &__box {
@@ -15,15 +25,14 @@
   }
 
   &__box {
-    padding: 0.5rem 0;
+    padding: $box-padding 0;
     border: 0;
-    border-bottom: 0.1rem solid $color-light-grey;
-    font-family: inherit;
+    border-bottom: $border-strength-bottom solid $color-light-grey;
     border-radius: 0;
     cursor: text;
     &:focus {
       outline: 0;
-      border-bottom: 0.1rem solid $color-blue;
+      border-bottom: $border-strength-bottom solid $color-blue;
     }
     &::-webkit-input-placeholder {
       opacity: 0;
@@ -38,7 +47,7 @@
   }
 
   &__box + &__label {
-    font-size: 0.7rem;
+    font-size: $box-font-size;
     cursor: text;
     max-width: 66.66%;
     overflow: hidden;

@@ -10,15 +10,15 @@ const CartButton = ({ cartCount, handleCartClick, className }) => (
   <Button
     role="navigation"
     aria-label="cart Button"
-    className={classNames(className, 'cart')}
+    className={classNames(className, 'header__cart')}
     onClick={handleCartClick}
   >
-    <CartIcon className="cart__image" />
-    <span className="cart__text">
+    <CartIcon className="header__cart__image" />
+    <span className="header__cart__text">
       {cartCount}
       {' '}
       <FormattedMessage
-        id={cartCount === 1 ? metadata?.cart.item.id : metadata?.cart.items.id}
+        id={cartCount === 1 ? metadata?.cart.item : metadata?.cart.items}
       />
     </span>
   </Button>

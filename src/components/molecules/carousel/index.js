@@ -27,6 +27,7 @@ const Carousel = ({ bannersInfo }) => {
 
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(0);
   };
 
   const handleTouchMove = (e) => {
@@ -34,13 +35,11 @@ const Carousel = ({ bannersInfo }) => {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 15) {
-      // do your stuff here for left swipe
+    if (touchEnd && touchStart - touchEnd > 15) {
       handleSlide(currentSlide === bannersInfo.length ? 1 : currentSlide + 1);
     }
 
-    if (touchStart - touchEnd < -15) {
-      // do your stuff here for right swipe
+    if (touchEnd && touchStart - touchEnd < -15) {
       handleSlide(currentSlide === 1 ? bannersInfo.length : currentSlide - 1);
     }
   };
@@ -76,7 +75,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="previous banner"
       >
-        <FormattedMessage id={carouselMetadata?.buttons?.previous?.id} />
+        <FormattedMessage id={carouselMetadata?.buttons?.previous} />
       </Button>
       <Button
         className="carousel__button carousel__button--right"
@@ -87,7 +86,7 @@ const Carousel = ({ bannersInfo }) => {
         }}
         aria-label="next banner"
       >
-        <FormattedMessage id={carouselMetadata?.buttons?.next?.id} />
+        <FormattedMessage id={carouselMetadata?.buttons?.next} />
       </Button>
       <div className="carousel__nav">
         {bannersInfo.map((banner) => (

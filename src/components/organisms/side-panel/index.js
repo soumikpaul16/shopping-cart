@@ -4,19 +4,17 @@ import { RouteLink } from '../../atoms';
 import './SidePanel.scss';
 
 const SidePanel = ({ links }) => (
-  <div className="side-panel__links">
-    <div className="side-panel__links--fixed">
+  <aside className="side-panel__links">
+    <ul className="side-panel__links__list side-panel__links--fixed">
       {links.map((link) => (
-        <RouteLink
-          key={link.id}
-          className="side-panel__links__item"
-          path={link.path}
-        >
-          {link.name}
-        </RouteLink>
+        <li key={link.id}>
+          <RouteLink className="side-panel__links__item" path={link.path}>
+            {link.name}
+          </RouteLink>
+        </li>
       ))}
-    </div>
-  </div>
+    </ul>
+  </aside>
 );
 
 SidePanel.propTypes = {

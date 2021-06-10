@@ -8,19 +8,19 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [banners, setBanners] = useState([]);
 
-  const bannersData = useQuery(GET_BANNERS);
-  const categoriesData = useQuery(GET_CATEGORIES);
+  const { data: bannersData } = useQuery(GET_BANNERS);
+  const { data: categoriesData } = useQuery(GET_CATEGORIES);
 
   useEffect(() => {
     let isCancelled = false;
-    if (!isCancelled && bannersData?.data && categoriesData?.data) {
+    if (!isCancelled && bannersData && categoriesData) {
       setBanners(
-        bannersData.data.banners
+        bannersData.banners
           .filter((banner) => banner.isActive)
           .sort((a, b) => a.order - b.order),
       );
       setCategories(
-        categoriesData.data.categories
+        categoriesData.categories
           .filter((category) => category.enabled)
           .sort((a, b) => a.order - b.order),
       );

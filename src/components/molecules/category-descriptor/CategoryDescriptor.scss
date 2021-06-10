@@ -1,23 +1,24 @@
 @import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/spaces";
+
+$category-link-padding: 1rem;
 
 .category {
   &__description {
     flex: 3;
     text-align: center;
     &__name {
-      margin: 0px;
-    }
-    &__content {
+      margin: 0;
     }
     &__link {
-      padding: 1rem;
+      padding: $category-link-padding;
       display: block;
       width: fit-content;
       margin: auto;
       color: $color-white;
       text-align: center;
       text-decoration: none;
-      border-radius: 2px;
+      border-radius: $button-border-radius;
       background-color: $color-red;
     }
   }

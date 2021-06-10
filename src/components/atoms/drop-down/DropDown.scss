@@ -1,5 +1,12 @@
 @import "../../../assets/styles/variables/colors";
 @import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+
+$border-strength: 0.1rem;
+$button-font-size: 0.85rem;
+$button-padding: 1rem;
+$arrow-padding: 0.3rem;
 
 .select {
   &__container {
@@ -7,16 +14,43 @@
     width: 100%;
   }
 
-  &__option {
+  &__menu-item {
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      border-bottom: $border-strength solid $color-black;
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__button {
     outline: none;
-    width: inherit;
-    padding: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: $button-padding;
     background-color: $color-red;
-    border: none;
     color: $color-white;
-    font-size: 0.85rem;
+    font-size: $button-font-size;
     font-weight: 500;
-    cursor: pointer;
+    border-radius: 0;
+    border-bottom: $border-strength solid $color-white;
+    display: flex;
+    justify-content: space-between;
+    &--arrow-down {
+      border: solid $color-white;
+      border-width: 0 $border-strength $border-strength 0;
+      display: inline-block;
+      padding: $arrow-padding;
+      transform: $transform-45deg;
+      -webkit-transform: $transform-45deg;
+    }
+    &:active {
+      transform: none;
+    }
   }
   @media (min-width: $screen-mid) {
     &__container {

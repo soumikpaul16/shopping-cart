@@ -1,24 +1,36 @@
 @import "../../../assets/styles/variables/breakpoints";
 @import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/spaces";
+
+$side-panel-width-laptop: 256px;
+$side-panel-width-tablet: 25%;
+$side-panel-items-padding: 1rem;
 
 .side-panel {
   &__links {
     display: none;
-    min-height: 85vh;
   }
   @media (min-width: $screen-mid) {
     &__links {
       display: block;
-      width: 25%;
+      min-height: calc(
+        #{$full-viewport-height} - #{$header-hight-tablet} - #{$footer-height}
+      );
+      width: $side-panel-width-tablet;
       background-color: $color-light-grey;
       &--fixed {
         position: fixed;
         width: inherit;
       }
+      &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
       &__item {
         display: block;
-        padding: 1rem;
-        color: $color-grey;
+        padding: $side-panel-items-padding;
+        color: $color-dark-grey;
         border-bottom: solid 1px $color-translucent-grey;
         cursor: pointer;
       }
@@ -26,8 +38,11 @@
   }
   @media (min-width: $screen-x-large) {
     &__links {
+      min-height: calc(
+        #{$full-viewport-height} - #{$header-hight-laptop} - #{$footer-height}
+      );
       &--fixed {
-        width: 256px;
+        width: $side-panel-width-laptop;
       }
     }
   }

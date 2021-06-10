@@ -1,14 +1,18 @@
 @import "../assets/styles/variables/breakpoints";
+@import "../assets/styles/variables/spaces";
 
 .layout {
   &__container {
-    padding-top: 4rem;
-    min-height: 100vh;
+    padding-top: $header-hight-mobile;
+    min-height: $full-viewport-height;
+    &--overlay {
+      overflow-y: hidden;
+    }
     @media (min-width: $screen-mid) {
-      padding-top: 5rem;
+      padding-top: $header-hight-tablet;
     }
     @media (min-width: $screen-x-large) {
-      padding-top: 6rem;
+      padding-top: $header-hight-laptop;
     }
   }
 }

@@ -1,0 +1,53 @@
+@import "../../../assets/styles/variables/colors";
+@import "../../../assets/styles/variables/breakpoints";
+@import "../../../assets/styles/variables/spaces";
+
+$cart-width-laptop: 25rem;
+$cart-right-space-laptop: 10%;
+$cart-lowest-price-image-width: 7rem;
+$cart-lowest-price-image-margin: 1rem;
+$cart-lowest-price-wrap-margin-padding: 0.5rem;
+
+.cart {
+  width: 100%;
+  height: 100%;
+  background-color: $color-light-grey;
+  &__empty-wrapper {
+    background-color: $color-white;
+  }
+  &__empty {
+    display: flex;
+    justify-content: space-around;
+    height: calc(#{$full-viewport-height} - 14rem);
+    align-items: center;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+  &__lowest-price-wrap {
+    margin: $cart-lowest-price-wrap-margin-padding;
+    padding: $cart-lowest-price-wrap-margin-padding;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    img {
+      width: $cart-lowest-price-image-width;
+      margin-right: $cart-lowest-price-image-margin;
+    }
+  }
+}
+
+@media (min-width: $screen-large) {
+  .cart {
+    position: fixed;
+    width: $cart-width-laptop;
+    z-index: 2;
+    right: $cart-right-space-laptop;
+  }
+}
