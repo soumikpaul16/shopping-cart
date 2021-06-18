@@ -27,7 +27,7 @@ Here you can get the brief idea about what and how the project is gone from a bl
 - Html 5 with semantics.
 - Sass (Mixins, Variables, Nesting)
 - BEM structure in Sass.
-- React with Hooks.
+- [React with Hooks.](https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f)
 - Basic webpack Configuration.
 - Make development environment for frontend and backend.
 
