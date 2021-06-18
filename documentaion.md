@@ -76,7 +76,7 @@ Here you can get the brief idea about what and how the project is gone from a bl
 ## Concepts Used
 
 - Atomic design structure.
-- Semantic html.
+- [Semantic html.](https://medium.com/adalab/the-importance-of-semantic-html-78e74fb75ff0)
 - Accessibility.
 - CSS Grid and Flex.
 - CSS tokens.
